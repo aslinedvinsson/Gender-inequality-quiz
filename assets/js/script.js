@@ -91,3 +91,20 @@ function showStartPage() {
 
 //Calling function to only show the first div (first page) with information about the quiz
 showStartPage();
+
+//Getting the start quiz button
+let startBtn = document.getElementById('start_quiz_btn');
+
+function startQuizBtn() {
+    //Function startQuizBtn on the first page hides the divs first_page and last_page and shows second_page
+    let firstPage = document.querySelector('#first_page');
+    let secondPage = document.querySelector('#second_page');
+    let lastPage = document.querySelector('#last_page');
+    firstPage.style.display = 'none';
+    secondPage.style.display = 'flex';
+    lastPage.style.display = 'none';
+    console.log('startquizbtn function');
+}
+
+//Call function startQuizBtn when onlick on "start quiz" button
+startBtn.onclick = startQuizBtn;
