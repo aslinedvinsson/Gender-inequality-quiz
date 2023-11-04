@@ -76,3 +76,18 @@ let questions = [
     }
     */
 ];
+
+/*Using a function showStartPage instead of making three pages in html, the two divs (instead of two other pages) for 
+questions and result and retake quiz are set to display='none' using querySelector.*/
+function showStartPage() {
+    console.log('first page/start page'); 
+    let firstPage = document.querySelector('#first_page');
+    let secondPage = document.querySelector('#second_page');
+    let lastPage = document.querySelector('#last_page');
+    firstPage.style.display = 'flex';
+    secondPage.style.display = 'none'
+    lastPage.style.display = 'none';
+}
+
+//Calling function to only show the first div (first page) with information about the quiz
+showStartPage();
