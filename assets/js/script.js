@@ -116,7 +116,7 @@ startBtn.onclick = startQuizBtn;
 When user chose the correct answer the points variable add by 1.*/
 function displayQuestion() {
     let questionText = document.getElementById('question_text');
-    //let optionsDiv = document.getElementById('options');
+    let optionsDiv = document.getElementById('options');
     let optionBtns = document.querySelectorAll('.btn_opt');
     //Check if the current question index is lower than the lenght of the list of questions.
     if (currentQuestionIndex < questions.length) {
@@ -124,8 +124,10 @@ function displayQuestion() {
         for (let i = 0; i < optionBtns.length; i++) {
             optionBtns[i].textContent = questions[currentQuestionIndex].options[i];
         }
+    optionBtns.addEventListener('click',);
+//optionsDiv.addEventListener('click', ); TODO: Where best to put the eventlistner?
     }
-    //optionBtns.addEventListener('click', function());
+    
 
 }
 
