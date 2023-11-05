@@ -106,7 +106,7 @@ function startQuizBtn() {
     console.log('startquizbtn function');
     currentQuestionIndex = 0;
     displayQuestion();
-    console.log('display question function');
+    
 }
 
 //Call function startQuizBtn when onlick on "start quiz" button
@@ -115,8 +115,9 @@ startBtn.onclick = startQuizBtn;
 /*Function displayQuestion displays one question at the time including three option where one is the correct answer. 
 When user chose the correct answer the points variable add by 1.*/
 function displayQuestion() {
+    console.log('display question function');
     let questionText = document.getElementById('question_text');
-    let optionsDiv = document.getElementById('options');
+    //let optionsDiv = document.getElementById('options');
     let optionBtns = document.querySelectorAll('.btn_opt');
     //Check if the current question index is lower than the lenght of the list of questions.
     if (currentQuestionIndex < questions.length) {
@@ -124,13 +125,25 @@ function displayQuestion() {
         for (let i = 0; i < optionBtns.length; i++) {
             optionBtns[i].textContent = questions[currentQuestionIndex].options[i];
         }
-    optionBtns.addEventListener('click',);
+    optionBtns.addEventListener('click',addAnswerEvent);
+    console.log("optionsbtns click");
 //optionsDiv.addEventListener('click', ); TODO: Where best to put the eventlistner?
     }
-    
 
 }
 
+//Function to make option blue when user click on it, to show the user what they have chosen.
+function addAnswerEvent(event) {
+    if (event.target.classList.contains('btn_opt')) {
+       // selectedOptionIndex = event.target.getAttribute('data-index');
+        console.log("addAnswerEvent");
+        let selectedOption = document.querySelectorAll('.selected_blue');
+        for (let option of selectedOption) {
+            option.classList.remove('selected_blue');
+        };
+    }
+    event.target.classList.add('selected_blue');
+}
 
 
 
