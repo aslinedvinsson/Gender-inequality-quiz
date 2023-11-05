@@ -4,3 +4,12 @@
 .selected_blue {
     background-color: #C1E4FD
   }
+
+  /*Button change color to green (right) or red (wrong) depending on the answer is right or wrong*/
+.right_green {
+    background-color: #7FD1AE;
+  }
+  
+  .wrong_red {
+    background-color: #E48F92;
+  }

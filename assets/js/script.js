@@ -117,7 +117,6 @@ When user chose the correct answer the points variable add by 1.*/
 function displayQuestion() {
     console.log('display question function');
     let questionText = document.getElementById('question_text');
-    //let optionsDiv = document.getElementById('options');
     let optionBtns = document.querySelectorAll('.btn_opt');
     //Check if the current question index is lower than the lenght of the list of questions.
     if (currentQuestionIndex < questions.length) {
@@ -125,25 +124,51 @@ function displayQuestion() {
         for (let i = 0; i < optionBtns.length; i++) {
             optionBtns[i].textContent = questions[currentQuestionIndex].options[i];
         }
-    optionBtns.addEventListener('click',addAnswerEvent);
-    console.log("optionsbtns click");
-//optionsDiv.addEventListener('click', ); TODO: Where best to put the eventlistner?
+        optionBtns.addEventListener('click',addAnswerEvent);
+        console.log("optionsbtns click");
+        checkAnsBtn.addEventListener('click', checkAns);
+        //Display 'check answer' button and hide 'next question' button, until 'check answer' button is clicked.
+        checkAnsBtn.style.display = 'block';
+        nextQuestionBtn.style.display = 'none';
     }
-
 }
 
-//Function to make option blue when user click on it, to show the user what they have chosen.
+//Function to make option blue when user click on it, to show the user what they have selected.
+//TODO:Not working right now
 function addAnswerEvent(event) {
     if (event.target.classList.contains('btn_opt')) {
        // selectedOptionIndex = event.target.getAttribute('data-index');
         console.log("addAnswerEvent");
-        let selectedOption = document.querySelectorAll('.selected_blue');
+        
         for (let option of selectedOption) {
             option.classList.remove('selected_blue');
         };
     }
     event.target.classList.add('selected_blue');
 }
+let selectedOption = document.querySelectorAll('.selected_blue');
+let checkAnsBtn = document.getElementById('check_btn');
 
+// Function to check if the selected option is the correct answer 
+function checkAns() {
+    console.log('checkOptionsfunction');
+    let correctAns = questions[currentQuestionIndex].correctAns;
+    selectedOption.classList.remove('selected_blue');
+    if (selectedOptionIndex === correctAns) {
+        // User selected the correct answer
+        selectedOption.classList.add('right_green');
+        points++;
+        console.log(`Correct, total points: ${points}`);
+    } else {
+        // User selected the wrong answer
+        selectedOption.classList.add('wrong_red');
+        console.log(`Wrong, total points: ${points}`);
+    }
+    //After the user clicked on the checkAnsBtn, the button is hidden  and the nextQuestionBnt is shown.
+    checkAnsBtn.style.display = 'none';
+    nextQuestionBtn.style.display = 'block';
+    //After user check if they answered correct, the optionBtns are disabled
+    optionBtns.removeEventListener('click', addAnswerEvent);
+}
 
 
