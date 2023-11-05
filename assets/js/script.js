@@ -1,4 +1,18 @@
+let firstPage = document.querySelector('#first_page');
+let secondPage = document.querySelector('#second_page');
+let lastPage = document.querySelector('#last_page');
+let startBtn = document.getElementById('start_quiz_btn');
+let currentQuestionIndex = 0;
+//let optionBtns = document.getElementById('options');
+let optionBtns = document.querySelectorAll('.btn_opt');
+optionBtn = document.getElementById('options');
+let selectedOption = document.querySelectorAll('.selected_blue');
 
+//let selectedOption = null;
+let selectedOptionIndex;
+let checkAnsBtn = document.getElementById('btn_check');
+let points = [];
+let nextQuestionBtn = document.getElementById('btn_next')
 
 
 //Question and answers for the quiz
@@ -77,13 +91,14 @@ let questions = [
     */
 ];
 
+
+
+
 /*Using a function showStartPage instead of making three pages in html, the two divs (instead of two other pages) for 
 questions and result and retake quiz are set to display='none' using querySelector.*/
 function showStartPage() {
     console.log('first page/start page'); 
-    let firstPage = document.querySelector('#first_page');
-    let secondPage = document.querySelector('#second_page');
-    let lastPage = document.querySelector('#last_page');
+  
     firstPage.style.display = 'flex';
     secondPage.style.display = 'none'
     lastPage.style.display = 'none';
@@ -92,8 +107,7 @@ function showStartPage() {
 //Calling function to only show the first div (first page) with information about the quiz
 showStartPage();
 
-//Getting the start quiz button
-let startBtn = document.getElementById('start_quiz_btn');
+
 
 function startQuizBtn() {
     //Function startQuizBtn on the first page hides the divs first_page and last_page and shows second_page
@@ -103,8 +117,9 @@ function startQuizBtn() {
     firstPage.style.display = 'none';
     secondPage.style.display = 'flex';
     lastPage.style.display = 'none';
+    points = 0;
     console.log('startquizbtn function');
-    currentQuestionIndex = 0;
+    //currentQuestionIndex = 0;
     displayQuestion();
     
 }
@@ -117,15 +132,16 @@ When user chose the correct answer the points variable add by 1.*/
 function displayQuestion() {
     console.log('display question function');
     let questionText = document.getElementById('question_text');
-    let optionBtns = document.querySelectorAll('.btn_opt');
+   
     //Check if the current question index is lower than the lenght of the list of questions.
     if (currentQuestionIndex < questions.length) {
         questionText.textContent = questions[currentQuestionIndex].question;
         for (let i = 0; i < optionBtns.length; i++) {
             optionBtns[i].textContent = questions[currentQuestionIndex].options[i];
+        
         }
-        optionBtns.addEventListener('click',addAnswerEvent);
-        console.log("optionsbtns click");
+        optionBtn.addEventListener('click', addAnswer);
+        console.log("optionbtn click");
         checkAnsBtn.addEventListener('click', checkAns);
         //Display 'check answer' button and hide 'next question' button, until 'check answer' button is clicked.
         checkAnsBtn.style.display = 'block';
@@ -133,26 +149,30 @@ function displayQuestion() {
     }
 }
 
+
 //Function to make option blue when user click on it, to show the user what they have selected.
 //TODO:Not working right now
-function addAnswerEvent(event) {
+function addAnswer(event) {
+   // let selectedOptionIndex;
     if (event.target.classList.contains('btn_opt')) {
-       // selectedOptionIndex = event.target.getAttribute('data-index');
+        selectedOptionIndex = event.target.getAttribute('data-index');
         console.log("addAnswerEvent");
-        
-        for (let option of selectedOption) {
+        let selectedOption = document.querySelectorAll('selected_blue');
+        for (let option of selectedOption) { //TODO: Denna körs ej.
             option.classList.remove('selected_blue');
+            console.log('remove blue');
         };
     }
     event.target.classList.add('selected_blue');
 }
-let selectedOption = document.querySelectorAll('.selected_blue');
-let checkAnsBtn = document.getElementById('check_btn');
 
+/*
 // Function to check if the selected option is the correct answer 
 function checkAns() {
-    console.log('checkOptionsfunction');
+    console.log('checkAns');
+    let selectedOption = document.querySelectorAll('selected_blue');
     let correctAns = questions[currentQuestionIndex].correctAns;
+    
     selectedOption.classList.remove('selected_blue');
     if (selectedOptionIndex === correctAns) {
         // User selected the correct answer
@@ -168,7 +188,61 @@ function checkAns() {
     checkAnsBtn.style.display = 'none';
     nextQuestionBtn.style.display = 'block';
     //After user check if they answered correct, the optionBtns are disabled
-    optionBtns.removeEventListener('click', addAnswerEvent);
+    optionBtn.removeEventListener('click', addAnswer);
 }
 
+optionBtn.addEventListener('click', addAnswer);
+/*
+//let selectedOption; = null; // Initialize the reference to the selected option button
+/*
+// Function to make option blue when user clicks on it to show the user what they have selected.
+function addAnswer(event) {
+    let selectedOptionIndex;
+    selectedOption = event.target;
+    if (event.target.classList.contains('btn_opt')) {
+        selectedOptionIndex = event.target.getAttribute('data-index');
+        console.log("addAnswer function");
 
+        // Remove the 'selected_blue' class from the previous selected option button
+        if (selectedOption) {
+            selectedOption.classList.remove('selected_blue');
+        }
+
+        // Add the 'selected_blue' class to the currently selected option button
+        event.target.classList.add('selected_blue');
+
+        // Update the reference to the currently selected option button
+        selectedOption = event.target;
+    }
+}
+*/
+
+// Function to check if the selected option is the correct answer
+function checkAns() {
+    console.log('checkOptionsfunction');
+    let selectedOptionIndex;
+    let correctAns = questions[currentQuestionIndex].correctAns;
+
+    // Remove the 'selected_blue' class from the selected option button
+    selectedOption.classList.remove('selected_blue');
+
+    if (selectedOptionIndex === correctAns) {
+        // User selected the correct answer
+        selectedOption.classList.add('right_green');
+        points++;
+        console.log(`Correct, total points: ${points}`);
+    } else {
+        // User selected the wrong answer
+        selectedOption.classList.add('wrong_red');
+        console.log(`Wrong, total points: ${points}`);
+    }
+
+    // After the user clicked on the checkAnsBtn, the button is hidden and the nextQuestionBnt is shown.
+    checkAnsBtn.style.display = 'none';
+    nextQuestionBtn.style.display = 'block';
+
+    // After the user checks if they answered correctly, the optionBtns are disabled
+    for (let option of optionBtn) { //TODO: ska det här vara optionBtn eller annat?
+        option.removeEventListener('click', addAnswer);
+    }
+}
