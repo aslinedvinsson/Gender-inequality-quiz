@@ -303,6 +303,7 @@ function saveToScoreBoard() {
             table.appendChild(tBody);
         }
         showStartPage();
+        currentQuestionIndex = 0;
         console.log('showStartPage function run inside saveToScoreBoard function');
     }
     else {
