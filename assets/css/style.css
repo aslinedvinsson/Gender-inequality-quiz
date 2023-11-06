@@ -21,6 +21,39 @@
   height: 100%;
 }
 
+h1,
+h2,
+h3,
+p,
+th,
+tr,
+label {
+  padding-top: 3%;
+  padding-right: 5%;
+  padding-left: 5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 300%;
+}
+
+h2 {
+  font-size: 200%;
+}
+
+h3 {
+  font-size: 150%;
+}
+
+p,
+label,
+#input_username,
+tr {
+  font-size: 130%;
+  line-height: 140%;
+}
+
 .text_square {
   box-shadow: 5px 5px 50px black;
   border-radius: 5%;
@@ -30,6 +63,9 @@
 }
 
 
+.text {
+  padding: 3%;
+}
 
 
 .img {
