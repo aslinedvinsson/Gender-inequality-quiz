@@ -234,9 +234,7 @@ function nextQuestion() {
     }
 }
 
-
-// Next question button
-//let nextQuestionBtn = document.getElementById('next_btn');
+ 
 //Add click on the nextQuestionBtn and call the nextQuestion function
 nextQuestionBtn.addEventListener('click', nextQuestion);
 console.log('nextquestion function');
@@ -249,3 +247,6 @@ function afterLastQuestionBtn() {
         nextQuestionBtn.innerText = 'View results';
     }
 }
+
+// Function to show last page and hide the other two pages/divs
+function showLastPage() {}
