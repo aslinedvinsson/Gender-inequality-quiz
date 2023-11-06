@@ -3,16 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-/*
-.content {
-  display: flex;
-  justify-content: center;
-}
 
-.page {
-  width: 100vw;
-  align-items: center;
-}*/
 
 .content {
   display: flex;
@@ -24,6 +15,11 @@
   page-break-after: always;
 }
 
+/* Half side of the page*/
+.half {
+  width: 100%;
+  height: 100%;
+}
 
 .text_square {
   box-shadow: 5px 5px 50px black;
@@ -33,11 +29,8 @@
   background-color: #ddddde;
 }
 
-/* Half side of the page*/
-.half {
-  width: 100%;
-  height: 100%;
-}
+
+
 
 .img {
   overflow: hidden;
