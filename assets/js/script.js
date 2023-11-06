@@ -97,8 +97,8 @@ let questions = [
 /*Using a function showStartPage instead of making three pages in html, the two divs (instead of two other pages) for 
 questions and result and retake quiz are set to display='none' using querySelector.*/
 function showStartPage() {
-    console.log('first page/start page'); 
-  
+    console.log('first page/start page');
+
     firstPage.style.display = 'flex';
     secondPage.style.display = 'none'
     lastPage.style.display = 'none';
@@ -108,7 +108,7 @@ function showStartPage() {
 showStartPage();
 
 
-    //Function startQuizBtn on the first page hides the divs first_page and last_page and shows second_page
+//Function startQuizBtn on the first page hides the divs first_page and last_page and shows second_page
 function startQuizBtn() {
     let firstPage = document.querySelector('#first_page');
     let secondPage = document.querySelector('#second_page');
@@ -131,7 +131,7 @@ function displayQuestion() {
     console.log('display question function');
     let questionText = document.getElementById('question_text');
     let optionBtns = document.querySelectorAll('.btn_opt')
-   
+
     //Check if the current question index is lower than the lenght of the list of questions.
     if (currentQuestionIndex < questions.length) {
         questionText.textContent = questions[currentQuestionIndex].question;
@@ -141,7 +141,7 @@ function displayQuestion() {
         }
         optionBtn.addEventListener('click', addAnswer);
         console.log("optionbtn click");
-       checkAnsBtn.addEventListener('click', checkAns); 
+        checkAnsBtn.addEventListener('click', checkAns);
         console.log("click on the checkAnsBtn");
         //Display 'check answer' button and hide 'next question' button, until 'check answer' button is clicked.
         checkAnsBtn.style.display = 'block';
@@ -160,10 +160,10 @@ function addAnswer(event) {
         // Get the selected option index
         //let selectedOptionIndex = event.target.getAttribute('data-index');
         //console.log('Get the selected option index');
-        
+
         let selectedOption = document.querySelectorAll('.selected_blue');
         console.log("add blue");
- // Remove the "selected_blue" class from all elements with the class
+        // Remove the "selected_blue" class from all elements with the class
         for (let option of selectedOption) {
             option.classList.remove('selected_blue');
             console.log('remove blue');
@@ -176,36 +176,33 @@ function addAnswer(event) {
     }
 }
 
-
 // Function to check if the selected option is the correct answer 
-function checkAns(event) {
-    let selectedOption = document.querySelectorAll('.selected_blue');
+function checkAns() {
+    // Find the selected option
+    let selectedOption = document.querySelector('.selected_blue');
     let correctAns = questions[currentQuestionIndex].correctAns;
-    let selectedOptionIndex = event.target.getAttribute('data-index');
-    console.log('checkAns');
-    //option.classList.remove('selected_blue');
-    for (let option of selectedOption) {
-        option.classList.remove('selected_blue');
-        console.log('blue is removed to add green or red');
-    };
-    
-    if (selectedOptionIndex === correctAns) {
-        // User selected the correct answer
-        selectedOption.classList.add('right_green');
-        points++;
-        console.log(`Correct, total points: ${points}`);
-    } else {
-        // User selected the wrong answer
-        selectedOption.classList.add('wrong_red');
-        console.log(`Wrong, total points: ${points}`);
-    }
-    //After the user clicked on the checkAnsBtn, the button is hidden  and the nextQuestionBnt is shown.
-    checkAnsBtn.style.display = 'none';
-    nextQuestionBtn.style.display = 'block';
-    //After user check if they answered correct, the optionBtns are disabled
-    optionBtn.removeEventListener('click', addAnswer);
-    console.log('remove cklick on optionbtn');
-}
-//Add click on the optionBtn and call the addAnswer function
-optionBtn.addEventListener('click', addAnswer);
 
+    if (selectedOption) {
+        if (selectedOption.getAttribute('data-index') === correctAns) {
+            // User selected the correct answer
+            selectedOption.classList.add('right_green');
+            points++;
+            console.log(`Correct, total points: ${points}`);
+        } else {
+            // User selected the wrong answer
+            selectedOption.classList.add('wrong_red');
+            console.log(`Wrong, total points: ${points}`);
+        }
+
+        //After the user clicked on the checkAnsBtn, the button is hidden and the nextQuestionBtn is shown.
+        checkAnsBtn.style.display = 'none';
+        nextQuestionBtn.style.display = 'block';
+        //After the user checks if they answered correctly, the optionBtns are disabled
+        optionBtn.removeEventListener('click', addAnswer);
+        console.log('remove click on optionBtn');
+    } else {
+        // Alert message in case the user did not select an option 
+        alert('Please select an option before checking the answer.');
+        console.log('Please select an option before checking.');
+    }
+}
