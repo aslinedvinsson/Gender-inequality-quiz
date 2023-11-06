@@ -142,11 +142,11 @@ tr {
   margin-left: auto;
 }
 
-#save_result_btn {
+#save_btn {
   left: 35%;
 }
 
-.retake_quit_btn {
+.retake_quit_div {
   display: flex;
   justify-content: center;
 }
