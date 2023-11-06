@@ -229,7 +229,7 @@ function nextQuestion() {
             afterLastQuestionBtn();
         } else {
             showLastPage();
-            console.log('show last page function');
+            console.log('show last page function called');
         }
     }
 }
@@ -249,4 +249,13 @@ function afterLastQuestionBtn() {
 }
 
 // Function to show last page and hide the other two pages/divs
-function showLastPage() {}
+function showLastPage() {
+    //When 'View result' button on last question is clicked, the last page is shown
+    let firstPage = document.querySelector('#first_page');
+    let secondPage = document.querySelector('#second_page');
+    let lastPage = document.querySelector('#last_page');
+    firstPage.style.display = 'none';
+    secondPage.style.display = 'none';
+    lastPage.style.display = 'flex';
+    console.log('show last page function run');
+}
