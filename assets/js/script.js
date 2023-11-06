@@ -251,11 +251,25 @@ function afterLastQuestionBtn() {
 // Function to show last page and hide the other two pages/divs
 function showLastPage() {
     //When 'View result' button on last question is clicked, the last page is shown
-    let firstPage = document.querySelector('#first_page');
+    //let firstPage = document.querySelector('#first_page');
     let secondPage = document.querySelector('#second_page');
     let lastPage = document.querySelector('#last_page');
-    firstPage.style.display = 'none';
+   // firstPage.style.display = 'none';
     secondPage.style.display = 'none';
     lastPage.style.display = 'flex';
     console.log('show last page function run');
+    displayResults();
+    console.log('displayResults function called');
+}
+
+//Function to display results on the last page and give the user feedback on how well they did on the quiz
+function displayResults() {
+    let results = document.getElementById('results');
+    if (points <= 3) {
+        results.innerHTML = `You got ${points} points. You need to study more.`;
+    } else if (points >= 4 && points <= 7) {
+        results.innerHTML = `You got ${points} points. There is room for improvement`;
+    } else {
+        results.innerHTML = `You got ${points} points. Great job! The feminsit movement can count on you!`;
+    }
 }
