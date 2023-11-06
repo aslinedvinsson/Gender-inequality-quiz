@@ -135,6 +135,15 @@ tr {
   margin-top: 5%,
 }
 
+
+#input_username,
+#start_quiz_btn, #btn_check,
+#btn_next {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /*Hide the shorter instruction text on larger screen*/
 #instructions_small_device {
   display: none;
