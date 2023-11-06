@@ -342,3 +342,12 @@ function retakeQuiz() {
 }
 //Call the function "retakeQuizBtn"
 retakeQuizBtn.addEventListener('click', retakeQuiz);
+
+// Funtion "quit" resets the data and return the user to the first page 
+let quitBtn = document.getElementById('quit_btn');
+function quit() {
+    resetQuiz();
+    showStartPage();
+}
+//Add click event on quitbutton and call the function "quit"
+quitBtn.addEventListener('click', quit);
