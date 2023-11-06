@@ -1,4 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/*
+.content {
+  display: flex;
+  justify-content: center;
+}
 
+.page {
+  width: 100vw;
+  align-items: center;
+}*/
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 1500px;
+  overflow: hidden;
+  background-color: whitesmoke;
+  page-break-after: always;
+}
+
+
+.text_square {
+  box-shadow: 5px 5px 50px black;
+  border-radius: 5%;
+  margin: 8% 5% 5% 5%;
+  padding-bottom: 15px;
+  background-color: #ddddde;
+}
+
+/* Half side of the page*/
+.half {
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  overflow: hidden;
+}
 
 /*Button turns blue when the user click it to show the user what they have chosen*/
 .selected_blue {
