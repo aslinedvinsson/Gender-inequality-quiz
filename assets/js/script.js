@@ -15,6 +15,18 @@ let points = [];
 let nextQuestionBtn = document.getElementById('btn_next')
 
 
+let scoreboard = [
+    {
+        username: 'Nils',
+        points: 2
+    },
+    {
+        username: 'Anna',
+        points: 5
+    },
+];
+
+
 //Question and answers for the quiz
 let questions = [
     //Question 1
@@ -271,5 +283,48 @@ function displayResults() {
         results.innerHTML = `You got ${points} points. There is room for improvement`;
     } else {
         results.innerHTML = `You got ${points} points. Great job! The feminsit movement can count on you!`;
+    }
+}
+
+let saveBtn = document.getElementById('save_btn');
+saveBtn.addEventListener('click', saveToScoreBoard);
+let inputUsername = document.getElementById('input_username');
+
+function saveToScoreBoard() {
+    console.log('function saveToscoreboard is running');
+    let inputUsernameValue = document.getElementById('input_username').value;
+    if (inputUsernameValue) {
+        console.log('saveToScoreBoard function started');
+        console.log('inputusernameValue');
+        scoreboard.push({ username: inputUsernameValue, points: points });
+        let body = document.querySelector('tbody');
+        if (body) {
+            console.log('empties');
+            while (body.firstChild) {
+                // This will remove all children within tbody 
+                body.removeChild(body.firstChild);
+            }
+        }
+        scoreboard.sort(function (a, b) {
+            return b.points - a.points;
+        });
+        for (let i = 0; i < scoreboard.length; i++) {
+            let table = document.getElementById('table')
+            let tBody = document.createElement('tbody');
+            let tRow = document.createElement('tr');
+            let userNameSpace = document.createElement('td');
+            let pointsSpace = document.createElement('td');
+            userNameSpace.innerHTML = scoreboard[i].username;
+            pointsSpace.innerHTML = scoreboard[i].points;
+            tRow.appendChild(userNameSpace);
+            tRow.appendChild(pointsSpace);
+            tBody.appendChild(tRow);
+            table.appendChild(tBody);
+        }
+        showStartPage();
+        console.log('showStartPage function run inside saveToScoreBoard function');
+    }
+    else {
+        alert('Please enter username.');
     }
 }
