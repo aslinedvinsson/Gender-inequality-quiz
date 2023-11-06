@@ -323,3 +323,22 @@ function saveToScoreBoard() {
         alert('Please enter username.');
     }
 }
+
+//Function to reset number of points, empties the username field and start the quiz on the first question
+function resetQuiz() {
+    points = 0;
+    currentQuestionIndex = 0;
+    document.getElementById('input_username').value = '';
+    nextQuestionBtn.innerText = 'Next question';
+    console.log('resetQuiz function run');
+}
+
+//Function to retake quiz which returns to the first question
+let retakeQuizBtn = document.getElementById('retake');
+function retakeQuiz() {
+    resetQuiz();
+    startQuizBtn();
+    console.log('retakequiz function körs och reset och startquizbtn function');
+}
+//Call the function "retakeQuizBtn"
+retakeQuizBtn.addEventListener('click', retakeQuiz);
