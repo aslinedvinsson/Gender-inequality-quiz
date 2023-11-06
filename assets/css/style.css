@@ -135,6 +135,11 @@ tr {
   margin-top: 5%,
 }
 
+/*Hide the shorter instruction text on larger screen*/
+#instructions_small_device {
+  display: none;
+}
+
 /*Button turns blue when the user click it to show the user what they have chosen*/
 .selected_blue {
     background-color: #C1E4FD
@@ -147,4 +152,18 @@ tr {
   
   .wrong_red {
     background-color: #E48F92;
+  }
+
+
+
+  @media screen and (max-width: 600px) {
+    /*Hide the longer text on small devices and show the shorter text for instructions instead*/
+    #instructions_large_device {
+      display: none;
+    }
+  
+    #instructions_small_device {
+      display: block;
+    }
+  
   }
