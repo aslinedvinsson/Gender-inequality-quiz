@@ -172,8 +172,9 @@ function addAnswer(event) {
     if (event.target.classList.contains('btn_opt')) {
         // Get the selected option index
         //let selectedOptionIndex = event.target.getAttribute('data-index');
-        //console.log('Get the selected option index');
-
+       
+        selectedOptionIndex = event.target.getAttribute('data-index');
+         //console.log('Get the selected option index');
         let selectedOption = document.querySelectorAll('.selected_blue');
         console.log("add blue");
         // Remove the "selected_blue" class from all elements with the class
@@ -191,34 +192,33 @@ function addAnswer(event) {
 
 // Function to check if the selected option is the correct answer 
 function checkAns() {
-    // Find the selected option
     let selectedOption = document.querySelector('.selected_blue');
     let correctAns = questions[currentQuestionIndex].correctAns;
-    selectedOption.classList.remove('selected_blue');
     if (selectedOption) {
-        if (selectedOption.getAttribute('data-index') === correctAns) {
-            // User selected the correct answer
+        // Remove the "selected_blue" class from the selected option
+        selectedOption.classList.remove('selected_blue');
+        if (selectedOptionIndex === correctAns) {
+            // User selected the correct answer and option turns green
             selectedOption.classList.add('right_green');
             points++;
             console.log(`Correct, total points: ${points}`);
         } else {
-            // User selected the wrong answer
+            // User selected the wrong answer and option turns red
             selectedOption.classList.add('wrong_red');
             console.log(`Wrong, total points: ${points}`);
         }
-
-        //After the user clicked on the checkAnsBtn, the button is hidden and the nextQuestionBtn is shown.
+        // After the user clicked on the "Check Answer" button, the button is hidden and the "Next Question" button is shown.
         checkAnsBtn.style.display = 'none';
         nextQuestionBtn.style.display = 'block';
-        //After the user checks if they answered correctly, the optionBtns are disabled
+        // After the user checks if they answered correctly, the optionBtns are disabled
         optionBtn.removeEventListener('click', addAnswer);
-        console.log('remove click on optionBtn');
     } else {
-        // Alert message in case the user did not select an option 
+        // Alert message in case the user did not select an option
         alert('Please select an option before checking the answer.');
         console.log('Please select an option before checking.');
     }
 }
+
 
 function nextQuestion() {
     let selectedAnswer = document.querySelectorAll('.right_green, .wrong_red');
@@ -296,7 +296,9 @@ function saveToScoreBoard() {
     if (inputUsernameValue) {
         console.log('saveToScoreBoard function started');
         console.log('inputusernameValue');
+        //Push the values inputUsernameValue and points to the scoreboard
         scoreboard.push({ username: inputUsernameValue, points: points });
+        //TODO:
         let body = document.querySelector('tbody');
         if (body) {
             console.log('empties');
@@ -305,9 +307,11 @@ function saveToScoreBoard() {
                 body.removeChild(body.firstChild);
             }
         }
+        // Point are sorted so the username with highest amount of points is in the top of the scoreboard
         scoreboard.sort(function (a, b) {
             return b.points - a.points;
         });
+        //TODO:
         for (let i = 0; i < scoreboard.length; i++) {
             let table = document.getElementById('table')
             let tBody = document.createElement('tbody');
