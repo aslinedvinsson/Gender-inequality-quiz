@@ -21,6 +21,18 @@
   height: 100%;
 }
 
+.img {
+  overflow: hidden;
+}
+
+.text_square {
+  box-shadow: 5px 5px 50px black;
+  border-radius: 5%;
+  margin: 8% 5% 5% 5%;
+  padding-bottom: 15px;
+  background-color: #ddddde;
+}
+
 h1,
 h2,
 h3,
@@ -54,22 +66,73 @@ tr {
   line-height: 140%;
 }
 
-.text_square {
-  box-shadow: 5px 5px 50px black;
-  border-radius: 5%;
-  margin: 8% 5% 5% 5%;
-  padding-bottom: 15px;
-  background-color: #ddddde;
+/*General styling of all the buttons*/
+/*Code taken from https://getcssscan.com/css-buttons-examples button nr 80, with small adjustments*/
+.btn {
+  background: #fff;
+  backface-visibility: hidden;
+  border-radius: .375rem;
+  border-style: solid;
+  border-width: .125rem;
+  box-sizing: border-box;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  /*Change font-size*/
+  font-size: 1.5rem;
+  font-weight: 700;
+  /*letter-spacing: -.01em;
+  line-height: 1.3;*/
+  padding: .875rem 1.125rem;
+  position: relative;
+  /*text-align: left;
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;*/
 }
 
-
-.text {
-  padding: 3%;
+.btn:not(:disabled):hover {
+  transform: scale(1.05);
 }
 
+.btn:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
 
-.img {
-  overflow: hidden;
+.btn:focus {
+  outline: 0 solid transparent;
+}
+
+.btn:focus:before {
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.btn:focus:not(:focus-visible):before {
+  border-width: 0;
+}
+
+.btn:not(:disabled):active {
+  transform: translateY(.125rem);
+} /*End of code from getcssscan.com*/
+
+/*Start button-div*/
+.start {
+  margin-left: 40%;
+  padding-bottom: 5%;
+  margin-top: 5%,
 }
 
 /*Button turns blue when the user click it to show the user what they have chosen*/
