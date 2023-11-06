@@ -3,14 +3,14 @@ let secondPage = document.querySelector('#second_page');
 let lastPage = document.querySelector('#last_page');
 let startBtn = document.getElementById('start_quiz_btn');
 let currentQuestionIndex = 0;
-//let optionBtns = document.getElementById('options');
-//let optionBtns = document.querySelectorAll('.btn_opt');
-//let optionBtn = document.getElementById('options');
+let optionBtn = document.getElementById('options');
+
 //let selectedOption = document.querySelectorAll('.selected_blue');
 
 //let selectedOption = null;
 //let selectedOptionIndex;
-//let checkAnsBtn = document.getElementById('btn_check');
+
+let checkAnsBtn = document.getElementById('btn_check');
 let points = [];
 let nextQuestionBtn = document.getElementById('btn_next')
 
@@ -103,14 +103,10 @@ let questions = [
     */
 ];
 
-
-
-
 /*Using a function showStartPage instead of making three pages in html, the two divs (instead of two other pages) for 
 questions and result and retake quiz are set to display='none' using querySelector.*/
 function showStartPage() {
     console.log('first page/start page');
-
     firstPage.style.display = 'flex';
     secondPage.style.display = 'none'
     lastPage.style.display = 'none';
@@ -119,12 +115,11 @@ function showStartPage() {
 //Calling function to only show the first div (first page) with information about the quiz
 showStartPage();
 
-
 //Function startQuizBtn on the first page hides the divs first_page and last_page and shows second_page
 function startQuizBtn() {
-    let firstPage = document.querySelector('#first_page');
-    let secondPage = document.querySelector('#second_page');
-    let lastPage = document.querySelector('#last_page');
+    //let firstPage = document.querySelector('#first_page');
+   // let secondPage = document.querySelector('#second_page');
+   // let lastPage = document.querySelector('#last_page');
     firstPage.style.display = 'none';
     secondPage.style.display = 'flex';
     lastPage.style.display = 'none';
@@ -143,7 +138,6 @@ function displayQuestion() {
     console.log('display question function');
     let questionText = document.getElementById('question_text');
     let optionBtns = document.querySelectorAll('.btn_opt')
-
     //Check if the current question index is lower than the lenght of the list of questions.
     if (currentQuestionIndex < questions.length) {
         questionText.textContent = questions[currentQuestionIndex].question;
@@ -162,17 +156,14 @@ function displayQuestion() {
     }
 }
 
-let optionBtn = document.getElementById('options');
+//let optionBtn = document.getElementById('options');
 //let selectedOption = document.querySelectorAll('.selected_blue');
-let checkAnsBtn = document.getElementById('btn_check');
+//let checkAnsBtn = document.getElementById('btn_check');
 
 //Function to make option blue when user click on it, to show the user what they have selected.
-//TODO:Not working right now
 function addAnswer(event) {
     if (event.target.classList.contains('btn_opt')) {
         // Get the selected option index
-        //let selectedOptionIndex = event.target.getAttribute('data-index');
-       
         selectedOptionIndex = event.target.getAttribute('data-index');
          //console.log('Get the selected option index');
         let selectedOption = document.querySelectorAll('.selected_blue');
@@ -182,9 +173,7 @@ function addAnswer(event) {
             option.classList.remove('selected_blue');
             console.log('remove blue');
         };
-
         // Add the "selected_blue" class to the currently selected option
-
         event.target.classList.add('selected_blue');
         console.log('Add blue again');
     }
@@ -219,7 +208,6 @@ function checkAns() {
     }
 }
 
-
 function nextQuestion() {
     let selectedAnswer = document.querySelectorAll('.right_green, .wrong_red');
     if (selectedAnswer) {
@@ -246,15 +234,14 @@ function nextQuestion() {
     }
 }
 
- 
 //Add click on the nextQuestionBtn and call the nextQuestion function
 nextQuestionBtn.addEventListener('click', nextQuestion);
 console.log('nextquestion function');
 
 //Variable for the last question in the quiz
 let lastQuestionIndex = questions.length - 1;
+//Function to check if the current question is the last question, and if it is, change the text on the nextQuestionBtn to 'View result'
 function afterLastQuestionBtn() {
-    //Check if the current question is the last question, and if it is, change the text on the nextQuestionBtn to 'View result'
     if (currentQuestionIndex === lastQuestionIndex) {
         nextQuestionBtn.innerText = 'View results';
     }
@@ -264,8 +251,8 @@ function afterLastQuestionBtn() {
 function showLastPage() {
     //When 'View result' button on last question is clicked, the last page is shown
     //let firstPage = document.querySelector('#first_page');
-    let secondPage = document.querySelector('#second_page');
-    let lastPage = document.querySelector('#last_page');
+    //let secondPage = document.querySelector('#second_page');
+   // let lastPage = document.querySelector('#last_page');
    // firstPage.style.display = 'none';
     secondPage.style.display = 'none';
     lastPage.style.display = 'flex';
@@ -286,10 +273,14 @@ function displayResults() {
     }
 }
 
+//Get the save button 
 let saveBtn = document.getElementById('save_btn');
+//Add click event on the save button
 saveBtn.addEventListener('click', saveToScoreBoard);
+//Get the input_username id
 let inputUsername = document.getElementById('input_username');
 
+//function to save username and points to scoreboard
 function saveToScoreBoard() {
     console.log('function saveToscoreboard is running');
     let inputUsernameValue = document.getElementById('input_username').value;
