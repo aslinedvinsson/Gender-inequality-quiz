@@ -4,15 +4,9 @@ let lastPage = document.querySelector('#last_page');
 let startBtn = document.getElementById('start_quiz_btn');
 let currentQuestionIndex = 0;
 let optionBtn = document.getElementById('options');
-
-//let selectedOption = document.querySelectorAll('.selected_blue');
-
-//let selectedOption = null;
-//let selectedOptionIndex;
-
 let checkAnsBtn = document.getElementById('btn_check');
-let points = [];
 let nextQuestionBtn = document.getElementById('btn_next')
+//let points = [];
 
 
 let scoreboard = [
@@ -117,15 +111,11 @@ showStartPage();
 
 //Function startQuizBtn on the first page hides the divs first_page and last_page and shows second_page
 function startQuizBtn() {
-    //let firstPage = document.querySelector('#first_page');
-   // let secondPage = document.querySelector('#second_page');
-   // let lastPage = document.querySelector('#last_page');
     firstPage.style.display = 'none';
     secondPage.style.display = 'flex';
     lastPage.style.display = 'none';
     points = 0;
     console.log('startquizbtn function');
-    //currentQuestionIndex = 0;
     displayQuestion();
 }
 
@@ -155,10 +145,6 @@ function displayQuestion() {
         console.log('hide next question btn')
     }
 }
-
-//let optionBtn = document.getElementById('options');
-//let selectedOption = document.querySelectorAll('.selected_blue');
-//let checkAnsBtn = document.getElementById('btn_check');
 
 //Function to make option blue when user click on it, to show the user what they have selected.
 function addAnswer(event) {
