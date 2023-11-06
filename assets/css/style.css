@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 .content {
   display: flex;
   justify-content: center;
@@ -135,18 +134,21 @@ tr {
   margin-top: 5%,
 }
 
-
-#input_username,
+/*Continued button styling*/
 #start_quiz_btn, #btn_check,
-#btn_next {
+#btn_next, #input_username {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
 
-/*Hide the shorter instruction text on larger screen*/
-#instructions_small_device {
-  display: none;
+#save_result_btn {
+  left: 35%;
+}
+
+.retake_quit_btn {
+  display: flex;
+  justify-content: center;
 }
 
 /*Button turns blue when the user click it to show the user what they have chosen*/
@@ -162,8 +164,20 @@ tr {
   .wrong_red {
     background-color: #E48F92;
   }
+  /*End of button styling*/
 
+  /*First page*/
+  /*Hide the shorter instruction text on larger screen*/
+#instructions_small_device {
+  display: none;
+}
 
+  /*Third page*/
+
+  #input_username {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
 
   @media screen and (max-width: 600px) {
     /*Hide the longer text on small devices and show the shorter text for instructions instead*/
