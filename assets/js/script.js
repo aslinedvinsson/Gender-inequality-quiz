@@ -146,6 +146,7 @@ function displayQuestion() {
         //Display 'check answer' button and hide 'next question' button, until 'check answer' button is clicked.
         checkAnsBtn.style.display = 'block';
         nextQuestionBtn.style.display = 'none';
+        console.log('hide next question btn')
     }
 }
 
@@ -181,7 +182,7 @@ function checkAns() {
     // Find the selected option
     let selectedOption = document.querySelector('.selected_blue');
     let correctAns = questions[currentQuestionIndex].correctAns;
-
+    selectedOption.classList.remove('selected_blue');
     if (selectedOption) {
         if (selectedOption.getAttribute('data-index') === correctAns) {
             // User selected the correct answer
@@ -204,5 +205,47 @@ function checkAns() {
         // Alert message in case the user did not select an option 
         alert('Please select an option before checking the answer.');
         console.log('Please select an option before checking.');
+    }
+}
+
+function nextQuestion() {
+    let selectedAnswer = document.querySelectorAll('.right_green, .wrong_red');
+    if (selectedAnswer) {
+        //Remove the "right_green" class from all answer buttons
+        let answerOptionsGreen = document.querySelectorAll('.right_green');
+        for (let option of answerOptionsGreen) {
+            option.classList.remove('right_green');
+        }
+        // Remove the "wrong_red" class from all answer buttons
+        let AnswerOptionsRed = document.querySelectorAll('.wrong_red');
+        for (let option of AnswerOptionsRed) {
+            option.classList.remove('wrong_red');
+            console.log('remove red');
+        }
+        //As long as the current question is not the last question, the displayQuestion function is called.
+        if (currentQuestionIndex < lastQuestionIndex) {
+            currentQuestionIndex++;
+            displayQuestion();
+            afterLastQuestionBtn();
+        } else {
+            showLastPage();
+            console.log('show last page function');
+        }
+    }
+}
+
+
+// Next question button
+//let nextQuestionBtn = document.getElementById('next_btn');
+//Add click on the nextQuestionBtn and call the nextQuestion function
+nextQuestionBtn.addEventListener('click', nextQuestion);
+console.log('nextquestion function');
+
+//Variable for the last question in the quiz
+let lastQuestionIndex = questions.length - 1;
+function afterLastQuestionBtn() {
+    //Check if the current question is the last question, and if it is, change the text on the nextQuestionBtn to 'View result'
+    if (currentQuestionIndex === lastQuestionIndex) {
+        nextQuestionBtn.innerText = 'View results';
     }
 }
