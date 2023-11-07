@@ -20,8 +20,12 @@
   height: 100%;
 }
 
-.img {
+.img_half {
   overflow: hidden;
+}
+
+.text_half {
+  padding: 3%;
 }
 
 .text_square {
@@ -168,7 +172,6 @@ tr {
 .wrong_red {
   background-color: #E48F92;
 }
-
 /*End of button styling*/
 
 /*First page*/
