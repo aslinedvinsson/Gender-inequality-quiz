@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 1500px;
+  width: 100%;
   overflow: hidden;
   background-color: whitesmoke;
   page-break-after: always;
@@ -242,7 +242,7 @@ tr {
   .text_square {
     opacity: 90%;
   }
-  
+
   /*Hide the longer text on small devices and show the shorter text for instructions instead*/
   #instructions_large_device {
     display: none;
