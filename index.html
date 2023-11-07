@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Quiz about gender inequality, ten questions, three options per question, save results to scoreboard" name="description">
-    <meta content="quiz, gender, inequality, UN Woman, World Economic Forum, question, scoreboard, username" name="keywords">
+    <meta content="Quiz about gender inequality, ten questions, three options per question, save results to scoreboard"
+        name="description">
+    <meta content="quiz, gender, inequality, UN Woman, World Economic Forum, question, scoreboard, username"
+        name="keywords">
     <link rel="stylesheet" href="assets/css/style.css">
     <!--To speed up the performance of the website, below is specified which characters need to be imported from Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20%21%22%23%24%25%26%27"
-    rel="stylesheet">
+        rel="stylesheet">
     <title>Gender Inequality Quiz</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
@@ -32,16 +36,17 @@
                 </div>
                 <div id="instructions_large_device" class="text_square">
                     <h2>Instructions to take the quiz</h2>
-
-                    <p>To take the quiz, click "Start Quiz." Answer questions one at a time. Correct answers are green, wrong ones are red. 
+                    <p>To take the quiz, click "Start Quiz." Answer questions one at a time. Correct answers are green,
+                        wrong ones are red.
                         After all questions answered, you'll get your result.</p>
-
-                        <p>To save points, create a username and click "Save." Your username and points will be presented on the scoreboard. 
+                    <p>To save points, create a username and click "Save." Your username and points will be presented on
+                        the scoreboard.
                         For a retake, click "Retake Quiz." To exit without saving, click "Quit."</p>
                 </div>
                 <div id="instructions_small_device" class="text_square">
                     <h2>Instructions to take the quiz</h2>
-                    <p>Start the quiz, answer questions, and save your points with a username. Retake or quit anytime.</p>
+                    <p>Start the quiz, answer questions, and save your points with a username. Retake or quit anytime.
+                    </p>
                 </div>
                 <!--Scoreboard to present the points user gets on the quiz-->
                 <div id="tables" class="scoreboard text_square">
@@ -93,8 +98,8 @@
     <div id="last_page" class="page">
         <div class="content">
             <div class="img_half half"><img src="assets/images/times_up.webp"
-                alt="Person demonstrating with a sign that says 'Times Up'">
-        </div>
+                    alt="Person demonstrating with a sign that says 'Times Up'">
+            </div>
             <div class="half">
                 <div class="text_square ">
                     <!--Presenting results of the quiz including av message depending on the number of points-->
@@ -122,32 +127,38 @@
                     <h3>OR </h3>
                     <p>Improve your scores and knowledge and retake the quiz by clicking on the Retake quiz button.</p>
                     <p>If you would like to end the quiz, just press Quit.</p>
-               
-                <!--Div for the two buttons Retake quiz and Quit-->
-                <div class="retake_quit_div">
-                    <!--Button to retake the quiz. The button is a reset button (resets the form-data to its initial values)-->
-                    <div>
-                        <button class='btn' id="retake" type="button">Retake quiz</button>
-                    </div>
-                    <!--Button to quit the quiz. The button is a reset button (resets the form-data to its initial values)-->
-                    <div>
-                        <button class='btn' id="quit_btn" type="button">Quit</button>
+
+                    <!--Div for the two buttons Retake quiz and Quit-->
+                    <div class="retake_quit_div">
+                        <!--Button to retake the quiz. The button is a reset button (resets the form-data to its initial values)-->
+                        <div>
+                            <button class='btn' id="retake" type="button">Retake quiz</button>
+                        </div>
+                        <!--Button to quit the quiz. The button is a reset button (resets the form-data to its initial values)-->
+                        <div>
+                            <button class='btn' id="quit_btn" type="button">Quit</button>
+                        </div>
                     </div>
                 </div>
-            </div>
                 <!--Read more section with links to sources used in the quiz-->
                 <div class="text_square">
                     <h3>Read More</h3>
                     <p>To enhance your understanding of the topic, please explore the following links:
-                        <a href="https://www.unwomen.org/en/digital-library/publications/2023/09/progress-on-the-sustainable-development-goals-the-gender-snapshot-2023">UN Women</a>
-                        <a href="https://www.weforum.org/publications/global-gender-gap-report-2023/digest">World Economic Forum</a>
-                        <a href="https://focus2030.org/Overview-of-data-resources-on-gender-equality-across-the-world">FOCUS2030</a>
-                        <a href="https://www.cordaid.org/en/news/why-we-still-need-womens-movements-in-2023-and-beyond/?gclid=CjwKCAjwv-2pBhB-EiwAtsQZFHB2EzOBHkAQADXFI4vAet3KqMZuVEoIp6gvma-V5eIOZzJ3YNjHghoCsB0QAvD_BwE">CordAid</a>
-                        <a href="https://www.raliance.org/wp-content/uploads/2018/05/Full-Report-2018-National-Study-on-Sexual-Harassment-and-Assault.pdf">RALIANCE</a>
+                        <a
+                            href="https://www.unwomen.org/en/digital-library/publications/2023/09/progress-on-the-sustainable-development-goals-the-gender-snapshot-2023">UN
+                            Women</a>
+                        <a href="https://www.weforum.org/publications/global-gender-gap-report-2023/digest">World
+                            Economic Forum</a>
+                        <a
+                            href="https://focus2030.org/Overview-of-data-resources-on-gender-equality-across-the-world">FOCUS2030</a>
+                        <a
+                            href="https://www.cordaid.org/en/news/why-we-still-need-womens-movements-in-2023-and-beyond/?gclid=CjwKCAjwv-2pBhB-EiwAtsQZFHB2EzOBHkAQADXFI4vAet3KqMZuVEoIp6gvma-V5eIOZzJ3YNjHghoCsB0QAvD_BwE">CordAid</a>
+                        <a
+                            href="https://www.raliance.org/wp-content/uploads/2018/05/Full-Report-2018-National-Study-on-Sexual-Harassment-and-Assault.pdf">RALIANCE</a>
                     </p>
                 </div>
             </div>
-          
+
         </div>
     </div><!--End of third page-->
     <script src="assets/js/script.js"></script>
