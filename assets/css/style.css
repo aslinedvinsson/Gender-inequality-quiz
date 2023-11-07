@@ -208,6 +208,22 @@ tr {
 
 @media screen and (max-width: 600px) {
 
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    page-break-after: auto;
+  }
+
+  .content div {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+
+  .half_p2 {
+    width: 90%;
+    height: 55%;
+  }
+  
   /*Hide the longer text on small devices and show the shorter text for instructions instead*/
   #instructions_large_device {
     display: none;
