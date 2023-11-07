@@ -1,4 +1,5 @@
 # Gender Inequality quiz
+![alt-text](documentation/responsive.png)
 
 ## Introduction
 The quiz is an interactive quiz about gender inequality, consisting of ten questions, each with three answer options. Once a user selects an option, they will receive instant feedback through color indicators on the options. If the chosen option is correct, it will turn green; if it is incorrect, it will turn red. If the user selects the wrong answer, not only will the chosen option turn red, but the other options will also turn red for wrong answers and green for the right answer. This provides users with immediate information on what the correct answer should be and helps them learn the facts.
@@ -20,6 +21,10 @@ last page
 ![alt-text](documentation/)
 
 ### Wireframes
+![alt-text](documentation/wireframe_first_page.png)
+![alt-text](documentation/wireframe_second_page.png)
+![alt-text](documentation/wireframe_last_page.png)
+![alt-text](documentation/wireframe_mobile.png)
 ### Fonts
 ### Colors
 
@@ -35,6 +40,9 @@ Sources for the Facts used to generate questions and answers are found for the q
 ### Future features
 ## Languages, programes and frameworks
 ## Testing
+**Lighthouse results**
+![alt-text](documentation/lighthouse_desktop.png)
+![alt-text](documentation/lighthouse_mobile.png)
 ### Responsiveness
 ### Bugs
 xxxxx
