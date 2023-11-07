@@ -8,8 +8,9 @@ let checkAnsBtn = document.getElementById('btn_check');
 let nextQuestionBtn = document.getElementById('btn_next')
 //let points = [];
 
-
+/*
 let scoreboard = [
+    
     {
         username: 'Nils',
         points: 2
@@ -19,6 +20,8 @@ let scoreboard = [
         points: 5
     },
 ];
+*/
+
 
 
 //Question and answers for the quiz
@@ -275,13 +278,13 @@ function saveToScoreBoard() {
         console.log('inputusernameValue');
         //Push the values inputUsernameValue and points to the scoreboard
         scoreboard.push({ username: inputUsernameValue, points: points });
-        //TODO:
+        //TODO: Not working to emptie older data
         let body = document.querySelector('tbody');
         if (body) {
-            console.log('empties');
             while (body.firstChild) {
                 // This will remove all children within tbody 
                 body.removeChild(body.firstChild);
+                console.log('empties');
             }
         }
         // Point are sorted so the username with highest amount of points is in the top of the scoreboard
@@ -304,6 +307,7 @@ function saveToScoreBoard() {
         }
         showStartPage();
         currentQuestionIndex = 0;
+        nextQuestionBtn.innerText = 'Next question';
         console.log('showStartPage function run inside saveToScoreBoard function');
     }
     else {
