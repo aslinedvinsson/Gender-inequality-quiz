@@ -200,6 +200,13 @@ tr {
   text-align: center;
 }
 
+/*Second page*/
+.options {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 5% 5% 5%;
+}
+
 /*Third page*/
 #input_username {
   margin-top: 2%;
@@ -223,7 +230,7 @@ tr {
     width: 90%;
     height: 55%;
   }
-  
+
   /*Hide the longer text on small devices and show the shorter text for instructions instead*/
   #instructions_large_device {
     display: none;
