@@ -25,8 +25,32 @@ last page
 ![alt-text](documentation/wireframe_second_page.png)
 ![alt-text](documentation/wireframe_last_page.png)
 ![alt-text](documentation/wireframe_mobile.png)
-### Fonts
-### Colors
+
+### Fonts xxxxx
+According to [TypWolf](https://www.typewolf.com/poppins), Poppins is a geometric sans-serif typeface. It was released as open-source and Indian Type Foundry describes Poppins as “an internationalist take on the geometric sans genre.” It supports both Latin and Devanagari languages and is available in nine weights with matching italics. Poppins is available for free on Google Fonts. 
+
+### Colors xxxxx
+According to [Canva](https://www.canva.com/colors/color-meanings/whitesmoke/) White is the color of peace—the white dove is a symbol of peace, while a white flag is used to represent surrender.Whitesmoke is a slightly gray shade of off white. The whitesmoke hex code is #F5F5F5.
+
+Whitesmoke is a neutral shade and therefore goes with most colors. As colorfull images, with strong messages are used,both the whitesmoke and grey keep the text neutral, but it also goes well with most colors. 
+
+The blue, green and red are syncronised with the grey textsquares.
+
+#DDDDDE lightgrey Grey is timeless and versatile, making it a good partner to a wide variety of colors.
+#C1E4FD blue btb
+#7FD1AE; green
+#E48F92; red
+#a9a9a9;darkgray;
+#212121;black btn text
+#fff; btn background
+
+![alt-text](documentation/whitesmoke.png) 
+![alt-text](documentation/grey.png) 
+![alt-text](documentation/blue.png) 
+![alt-text](documentation/green.png) 
+![alt-text](documentation/red.png) 
+![alt-text](documentation/white.png) 
+![alt-text](documentation/black.png)
 
 ### Images
 Images are sourced from [Unsplash](https://unsplash.com/), resized, to fit the website's design. The photographers are appropriately credited in the credit section.
@@ -34,7 +58,7 @@ Images are sourced from [Unsplash](https://unsplash.com/), resized, to fit the w
 ### Text
 Sources for the Facts used to generate questions and answers are found for the quiz are found in the Credits section. How they questions are formulated and any other text is written by the maker of the website. 
 
-## Features
+## Features xxx
 
 ### Existing features
 ### Future features
@@ -76,7 +100,7 @@ Question 7, 8 [WeForum](https://www.weforum.org/publications/global-gender-gap-r
 
 Question 9, 10 [UN Women](https://www.un.org/sustainabledevelopment/blog/2023/09press-release-the-world-is-failing-girls-and-women-according-to-new-un-report/) 
 
-**Favicon**
+**Favicon** xxxx
 ## Code from somewhere else
 **Inspired by**
 When structuring the README file, I found inspiration in both Siobhan Gorman's README for the Sourdough Bakes project and the README for the Love Running project.
