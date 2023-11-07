@@ -125,7 +125,9 @@ tr {
 
 .btn:not(:disabled):active {
   transform: translateY(.125rem);
-} /*End of code from getcssscan.com*/
+}
+
+/*End of code from getcssscan.com*/
 
 /*Start button-div*/
 .start {
@@ -135,8 +137,10 @@ tr {
 }
 
 /*Continued button styling*/
-#start_quiz_btn, #btn_check,
-#btn_next, #input_username {
+#start_quiz_btn,
+#btn_check,
+#btn_next,
+#input_username {
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -153,40 +157,64 @@ tr {
 
 /*Button turns blue when the user click it to show the user what they have chosen*/
 .selected_blue {
-    background-color: #C1E4FD
-  }
+  background-color: #C1E4FD
+}
 
-  /*Button change color to green (right) or red (wrong) depending on the answer is right or wrong*/
+/*Button change color to green (right) or red (wrong) depending on the answer is right or wrong*/
 .right_green {
-    background-color: #7FD1AE;
-  }
-  
-  .wrong_red {
-    background-color: #E48F92;
-  }
-  /*End of button styling*/
+  background-color: #7FD1AE;
+}
 
-  /*First page*/
-  /*Hide the shorter instruction text on larger screen*/
+.wrong_red {
+  background-color: #E48F92;
+}
+
+/*End of button styling*/
+
+/*First page*/
+/*Hide the shorter instruction text on larger screen*/
 #instructions_small_device {
   display: none;
 }
 
-  /*Third page*/
+table {
+  width: 100%;
+  table-layout: fixed;
+}
 
-  #input_username {
-    margin-top: 2%;
-    margin-bottom: 2%;
+/*Heading of the table*/
+caption {
+  font-size: 150%;
+  background-color: darkgray;
+  color: whitesmoke;
+  padding-top: 4%;
+}
+
+th {
+  font-size: 120%;
+  border-bottom: 1px black solid;
+  padding-right: 5%;
+}
+
+tr {
+  text-align: center;
+}
+
+/*Third page*/
+#input_username {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+@media screen and (max-width: 600px) {
+
+  /*Hide the longer text on small devices and show the shorter text for instructions instead*/
+  #instructions_large_device {
+    display: none;
   }
 
-  @media screen and (max-width: 600px) {
-    /*Hide the longer text on small devices and show the shorter text for instructions instead*/
-    #instructions_large_device {
-      display: none;
-    }
-  
-    #instructions_small_device {
-      display: block;
-    }
-  
+  #instructions_small_device {
+    display: block;
   }
+
+}
