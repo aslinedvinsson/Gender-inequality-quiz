@@ -1,4 +1,5 @@
 # Gender Inequality quiz
+[The Gender Inequality Quiz](https://aslinedvinsson.github.io/gender_inequality_quiz/)
 ![alt-text](documentation/responsive.png)
 
 ## Introduction
@@ -98,12 +99,10 @@ Sources for the Facts used to generate questions and answers are found for the q
 The quiz is created with HTML(Hypertext Markup Language), CSS (Cascading Style Sheet) and Javascript.
 
 - [Balsamiq](https://balsamiq.com/) was used to create the wireframes.
-- [Google Fonts](https://fonts.google.com/) was used for the fonts: Roboto and Bebas Neue.
-- [Fontawesome](https://fontawesome.com/) was used for the social media icons.
+- [Google Fonts](https://fonts.google.com/) was used for the font: Poppins.
 - [Simple image resizer ](https://www.simpleimageresizer.com/) was used to resize the images.
 - [Img tools](https://www.imgtools.co/) was used for cropping images.
-- [Cloudconvert](https://cloudconvert.com/webp-converter) was used to convert image files to .webp format. 
-- [Dirty Markup](https://www.10bestdesign.com/dirtymarkup/) was used to clean code.  
+- [Cloudconvert](https://cloudconvert.com/webp-converter) was used to convert image files to .webp format.   
 
 ## Testing
 **Validators**
@@ -134,8 +133,14 @@ xxxxx
 xxxxx
 
 ## Deployment
+The site is deployed at GitHub as follows: On the GitHub repository, go to Settings/Pages and set the default branch to Main. When the branch is selected the page will display a deployment and the link address.
+
+The live site is found here [The Gender Inequality Quiz](https://aslinedvinsson.github.io/gender_inequality_quiz/)
+
 # Credits
 **Mentor**
+
+I owe a great deal of credit to my highly respected mentor, Jad Mokdad, whose support and wise guidance played a pivotal role in shaping the trajectory of this project. His recommendations not only offered valuable guidance but also illuminated the path for me to focus my endeavors most effectively. 
 
 **Photos**
 - protest.webp by <a href="https://unsplash.com/@mettyunuabona?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ehimetalor Akhere Unuabona</a> on <a href="https://unsplash.com/photos/a-crowd-of-people-holding-signs-and-flags-UIat6pw8S7A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
@@ -166,6 +171,10 @@ Favicon designed by corpus delicti from [The Noun project](https://thenounprojec
 <img src="documentation/noun-feminism.png" alt="favicon" width="300" height="auto">
 
 ## Code from somewhere else
+
+**Template**
+Template was generated from Code-Institute-Org/ci-full-template.
+
 **Style buttons**
 
 Code for generell styling of buttons are taken from [GetScan](https://getcssscan.com/css-buttons-examples).
