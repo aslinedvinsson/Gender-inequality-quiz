@@ -10,15 +10,22 @@ At the end of the quiz, when the user has answered all the questions, the result
 The target audience for this quiz is anyone who wants to assess their understanding of gender inequality and, by taking the quiz, acquire additional knowledge on the topic. 
 
 ## Design
+**Introduction page** Text about the quiz, instruction on how to take the quiz and scoreboard
+![alt-text](documentation/first_page_desktop.png)
 
-first pagexxxxxx
-![alt-text](documentation/)
+**Questions** Displayed on at the time
+![alt-text](documentation/second_page_desktop.png)
 
-second page
-![alt-text](documentation/)
+**Resultpage** Showing the result of the taken quiz and instruction on how to save the result by creating a username or retake the quiz or quit
+![alt-text](documentation/last_page_desktop.png)
 
-last page
-![alt-text](documentation/)
+**Scoreboard** Showing points afte three users taken the quiz
+![alt-text](documentation/scoreboard.png)
+
+**Mobile device** The images are displayed in the background of the text
+
+<img src="documentation/first_page_mobile.png" alt="first page mobile device" width="300" height="auto">
+
 
 ### Wireframes
 ![alt-text](documentation/wireframe_first_page.png)
@@ -29,7 +36,7 @@ last page
 ### Fonts 
 Poppins is a geometric sans-serif typeface. It was released as open-source and Indian Type Foundry describes Poppins as “an internationalist take on the geometric sans genre.” Poppins is available for free on Google Fonts. Poppins signalise a modern but seroiuse content, which matchtes the theam of the quiz. 
 
-The fallback font is 
+The fallback font is san-serif xxxxx
 
 ### Colors 
 As the quiz have a serouis theam about gender inequality, the white and grey uttrycker neutrality, and not like a colorful page that can signal happiness and joy. 
@@ -52,7 +59,7 @@ Images are sourced from [Unsplash](https://unsplash.com/), resized, to fit the w
 ### Text
 Sources for the Facts used to generate questions and answers are found for the quiz are found in the Credits section. How they questions are formulated and any other text is written by the maker of the website. 
 
-## Features xxx
+## Features
 
 ### Existing features
 - A Start quiz button when clicked takes the user to what looks like an other page, but is a seperate div which is hidden during the div for the first page is shown. 
@@ -107,7 +114,19 @@ The quiz is created with HTML(Hypertext Markup Language), CSS (Cascading Style S
 **Lighthouse results**
 ![alt-text](documentation/lighthouse_desktop.png)
 ![alt-text](documentation/lighthouse_mobile.png)
-### Responsiveness
+
+**Manual testing**
+
+Links, form, buttons and Javascript functions were tested manually. 
+
+**Responsiveness**
+
+The website has been designed with a desktop-first approach, and during the development process, media queries and Flexbox have been utilized to ensure responsiveness across various screen sizes. On mobile design the images are displayed in the background of the text.
+
+**Browser testing**
+
+The website has undergone testing on popular web browsers such as Chrome, Mozilla Firefox, and Safari. In some cases, there are variations in the appearance in Mozilla Firefox and Safari. For additional information regarding this matter, please read 'Unfixed Bugs' section below.
+
 ### Bugs
 xxxxx
 
@@ -140,12 +159,26 @@ Question 7, 8 [WeForum](https://www.weforum.org/publications/global-gender-gap-r
 
 Question 9, 10 [UN Women](https://www.un.org/sustainabledevelopment/blog/2023/09press-release-the-world-is-failing-girls-and-women-according-to-new-un-report/) 
 
-**Favicon** xxxx
+**Favicon** 
+
+Favicon designed by corpus delicti from [The Noun project](https://thenounproject.com/) 
+
+<img src="documentation/noun-feminism.png" alt="favicon" width="300" height="auto">
+
 ## Code from somewhere else
-**Inspired by**
-When structuring the README file, I found inspiration in both Siobhan Gorman's README for the Sourdough Bakes project and the README for the Love Running project.
+**Style buttons**
 
-Links to the original README files: 
+Code for generell styling of buttons are taken from [GetScan](https://getcssscan.com/css-buttons-examples).
 
-https://github.com/siobhanlgorman/Sourdough-Bakes/blob/master/README.md
-https://github.com/Code-Institute-Solutions/readme-template 
+**Tutorials on how to make a quiz**
+
+How to write the code for questions, options and correct answer is taken from [Making a Quiz in JavaScript by ZetBit](https://www.youtube.com/watch?v=BWR-MDQc65s)
+
+The layout of the quiz questions and options are inspired and learned from [How To Make Quiz App Using JavaScript | Build Quiz App With HTML CSS & JavaScript by GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8)
+
+**README layout**
+
+When structuring the README file, I found inspiration in both [Siobhan Gorman's README for the Sourdough Bakes project](https://github.com/siobhanlgorman/Sourdough-Bakes/blob/master/README.md) and the [README for the Love Running project](https://github.com/Code-Institute-Solutions/readme-template ).
+
+
+
