@@ -8,7 +8,7 @@ let checkAnsBtn = document.getElementById('btn_check');
 let nextQuestionBtn = document.getElementById('btn_next')
 //let points = [];
 
-/*
+
 let scoreboard = [
     
     {
@@ -20,11 +20,12 @@ let scoreboard = [
         points: 5
     },
 ];
-*/
+
 
 
 
 //Question and answers for the quiz
+//Code from https://www.youtube.com/watch?v=BWR-MDQc65s 
 let questions = [
     //Question 1
     {
