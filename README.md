@@ -26,23 +26,17 @@ last page
 ![alt-text](documentation/wireframe_last_page.png)
 ![alt-text](documentation/wireframe_mobile.png)
 
-### Fonts xxxxx
-According to [TypWolf](https://www.typewolf.com/poppins), Poppins is a geometric sans-serif typeface. It was released as open-source and Indian Type Foundry describes Poppins as “an internationalist take on the geometric sans genre.” It supports both Latin and Devanagari languages and is available in nine weights with matching italics. Poppins is available for free on Google Fonts. 
+### Fonts 
+Poppins is a geometric sans-serif typeface. It was released as open-source and Indian Type Foundry describes Poppins as “an internationalist take on the geometric sans genre.” Poppins is available for free on Google Fonts. Poppins signalise a modern but seroiuse content, which matchtes the theam of the quiz. 
 
-### Colors xxxxx
-According to [Canva](https://www.canva.com/colors/color-meanings/whitesmoke/) White is the color of peace—the white dove is a symbol of peace, while a white flag is used to represent surrender.Whitesmoke is a slightly gray shade of off white. The whitesmoke hex code is #F5F5F5.
+The fallback font is 
 
-Whitesmoke is a neutral shade and therefore goes with most colors. As colorfull images, with strong messages are used,both the whitesmoke and grey keep the text neutral, but it also goes well with most colors. 
+### Colors 
+As the quiz have a serouis theam about gender inequality, the white and grey uttrycker neutrality, and not like a colorful page that can signal happiness and joy. 
 
-The blue, green and red are syncronised with the grey textsquares.
+Whitesmoke which is the most used color on the website, is a slightly gray shade of off white. Whitesmoke is a neutral shade and therefore goes with most colors. As the images are in color, with strong messages are used, both the whitesmoke and grey keep the text neutral, but it also goes well with most colors. 
 
-#DDDDDE lightgrey Grey is timeless and versatile, making it a good partner to a wide variety of colors.
-#C1E4FD blue btb
-#7FD1AE; green
-#E48F92; red
-#a9a9a9;darkgray;
-#212121;black btn text
-#fff; btn background
+When the user clicks on an options, the options turns light blue to signal the user which option they have clicked. When the user then click the Check answer button. the selected answer will turn green if it is the right answer or red if it is the wrong answer. The green and red color is chosen for recognition, as it is universal colors for right and wrong. The blue, green and red are syncronised with the grey color in the textsquares.
 
 ![alt-text](documentation/whitesmoke.png) 
 ![alt-text](documentation/grey.png) 
@@ -61,9 +55,55 @@ Sources for the Facts used to generate questions and answers are found for the q
 ## Features xxx
 
 ### Existing features
+- A Start quiz button when clicked takes the user to what looks like an other page, but is a seperate div which is hidden during the div for the first page is shown. 
+
+- Three options buttons, which present three different answers on the quiz question. in javscript the options have different indexes, depending on if it is the right or wrong answer.
+
+- Changing colors on option buttons. When the user clicks on an options, the options turns light blue to signal the user which option they have clicked. The user can still, change there mind and click on an other option and instead that on turns blue. When the user decide which option to select, they then press the Check answer button. The selected answer will then turn green if it is the right answer or red if it is the wrong answer. 
+
+- A Check Answer button and Next question button. Once the Check answer button is clickd it is hidden and the Next question button is shown. 
+
+- Alert message on the Check answer button which activates of the user clicks it before selecting an option. 
+
+- A Show results button is shown instead of Next question button on the last question. The button takes the user to what looks like another page, which is a div which before is hidden and now shown. 
+
+- A points counter which summarize the number of correct answer. The number of points a presented along with a message depending on hw many correct answers the users got. 
+
+- A form the create a username. If the user wants to save the result, they can optionally create a username by just enter a username in the form and press the Save button. The first page will then be shown with a scoreboard with the username and number of points the user got. 
+
+- Alert message if the user press the Save button before they enter an username. 
+
+- A scoreboard which present the usernames and point of those users who have played at one time. When page is reloaded the scoreboard is reset.
+
+- A Retake quiz button which takes the user to the first question of the quiz. The Retake button also resets the number of point from the last try. 
+
+- A Quit button which takes the user to the first page without saving a username or points, and resets the quiz. 
+
+- A Read More section with links to a number of sites to learn more about gender enequality.
+
 ### Future features
-## Languages, programes and frameworks
+
+- Database that saves usernames and points over time even if the page is reloaded.
+
+- A wider selection of question which randomly are presented. 
+
+## Languages, programs and technologies
+The quiz is created with HTML(Hypertext Markup Language), CSS (Cascading Style Sheet) and Javascript.
+
+- [Balsamiq](https://balsamiq.com/) was used to create the wireframes.
+- [Google Fonts](https://fonts.google.com/) was used for the fonts: Roboto and Bebas Neue.
+- [Fontawesome](https://fontawesome.com/) was used for the social media icons.
+- [Simple image resizer ](https://www.simpleimageresizer.com/) was used to resize the images.
+- [Img tools](https://www.imgtools.co/) was used for cropping images.
+- [Cloudconvert](https://cloudconvert.com/webp-converter) was used to convert image files to .webp format. 
+- [Dirty Markup](https://www.10bestdesign.com/dirtymarkup/) was used to clean code.  
+
 ## Testing
+**Validators**
+- [HTML Validator](https://validator.w3.org/) 
+- [CSS Validator](https://jigsaw.w3.org/css-validator/) 
+- xxxxJS test was used to detect syntax errors, which were then fixed. 
+
 **Lighthouse results**
 ![alt-text](documentation/lighthouse_desktop.png)
 ![alt-text](documentation/lighthouse_mobile.png)
