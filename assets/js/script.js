@@ -6,11 +6,12 @@ let currentQuestionIndex = 0;
 let optionBtn = document.getElementById('options');
 let checkAnsBtn = document.getElementById('btn_check');
 let nextQuestionBtn = document.getElementById('btn_next')
+let inputUsername = document.getElementById('input_username');
 //let points = [];
 
 
 let scoreboard = [
-    
+
     {
         username: 'Nils',
         points: 2
@@ -155,7 +156,7 @@ function addAnswer(event) {
     if (event.target.classList.contains('btn_opt')) {
         // Get the selected option index
         selectedOptionIndex = event.target.getAttribute('data-index');
-         //console.log('Get the selected option index');
+        //console.log('Get the selected option index');
         let selectedOption = document.querySelectorAll('.selected_blue');
         console.log("add blue");
         // Remove the "selected_blue" class from all elements with the class
@@ -242,8 +243,8 @@ function showLastPage() {
     //When 'View result' button on last question is clicked, the last page is shown
     //let firstPage = document.querySelector('#first_page');
     //let secondPage = document.querySelector('#second_page');
-   // let lastPage = document.querySelector('#last_page');
-   // firstPage.style.display = 'none';
+    // let lastPage = document.querySelector('#last_page');
+    // firstPage.style.display = 'none';
     secondPage.style.display = 'none';
     lastPage.style.display = 'flex';
     console.log('show last page function run');
@@ -255,11 +256,11 @@ function showLastPage() {
 function displayResults() {
     let results = document.getElementById('results');
     if (points <= 3) {
-        results.innerHTML = `You got ${points} points. You need to study more.`;
+        results.innerHTML = `You got ${points} points out of 10. You need to study more.`;
     } else if (points >= 4 && points <= 7) {
-        results.innerHTML = `You got ${points} points. There is room for improvement`;
+        results.innerHTML = `You got ${points} points out of 10. There is room for improvement`;
     } else {
-        results.innerHTML = `You got ${points} points. Great job! The feminsit movement can count on you!`;
+        results.innerHTML = `You got ${points} points out of 10. Great job! The feminsit movement can count on you!`;
     }
 }
 
@@ -267,19 +268,27 @@ function displayResults() {
 let saveBtn = document.getElementById('save_btn');
 //Add click event on the save button
 saveBtn.addEventListener('click', saveToScoreBoard);
-//Get the input_username id
-let inputUsername = document.getElementById('input_username');
 
-//function to save username and points to scoreboard
+//function to save username and points to scoreboard    
 function saveToScoreBoard() {
     console.log('function saveToscoreboard is running');
-    let inputUsernameValue = document.getElementById('input_username').value;
+    let inputUsernameValue = inputUsername.value;
     if (inputUsernameValue) {
         console.log('saveToScoreBoard function started');
         console.log('inputusernameValue');
         //Push the values inputUsernameValue and points to the scoreboard
         scoreboard.push({ username: inputUsernameValue, points: points });
-        //TODO: Not working to emptie older data
+        //TODO: Not working to emptie older data, users are multiplied
+        /*function saveToScoreBoard() {
+            let inputUsernameValue = scoreboard.find((entry) => entry.name === inputUsernameValue);
+            if (inputUsernameValue) {
+                // If the player exists, update their score
+                inputUsernameValue.points = points;
+              } else {
+                // If the player doesn't exist, add a new entry
+                inputUsernameValue.push({ username: inputUsername, points: points });
+              }*/
+        
         let body = document.querySelector('tbody');
         if (body) {
             while (body.firstChild) {
@@ -287,33 +296,39 @@ function saveToScoreBoard() {
                 body.removeChild(body.firstChild);
                 console.log('empties');
             }
+
+            // Point are sorted so the username with highest amount of points is in the top of the scoreboard
+            scoreboard.sort(function (a, b) {
+                return b.points - a.points;
+            });
+            //TODO:
+            //Loop though the scoreboard list
+            for (let i = 0; i < scoreboard.length; i++) {
+                let table = document.getElementById('table')
+                //Create a tablebody element to hold the table rows
+                let tBody = document.createElement('tbody');
+                //Create a tablerow element for each user
+                let tRow = document.createElement('tr');
+                // Create two tabledata to display the user's username and points
+                let userNameSpace = document.createElement('td');
+                let pointsSpace = document.createElement('td');
+                userNameSpace.innerHTML = scoreboard[i].username;
+                pointsSpace.innerHTML = scoreboard[i].points;
+                // Append the 'userNameSpace' and 'pointsSpace' to the 'tRow', the 'tRow' to the 'tBody' and the 'tBody' to the 'table'
+                tRow.appendChild(userNameSpace);
+                tRow.appendChild(pointsSpace);
+                tBody.appendChild(tRow);
+                table.appendChild(tBody);
+            }
+            showStartPage();
+            currentQuestionIndex = 0;
+            nextQuestionBtn.innerText = 'Next question';
+            console.log('showStartPage function run inside saveToScoreBoard function');
         }
-        // Point are sorted so the username with highest amount of points is in the top of the scoreboard
-        scoreboard.sort(function (a, b) {
-            return b.points - a.points;
-        });
-        //TODO:
-        for (let i = 0; i < scoreboard.length; i++) {
-            let table = document.getElementById('table')
-            let tBody = document.createElement('tbody');
-            let tRow = document.createElement('tr');
-            let userNameSpace = document.createElement('td');
-            let pointsSpace = document.createElement('td');
-            userNameSpace.innerHTML = scoreboard[i].username;
-            pointsSpace.innerHTML = scoreboard[i].points;
-            tRow.appendChild(userNameSpace);
-            tRow.appendChild(pointsSpace);
-            tBody.appendChild(tRow);
-            table.appendChild(tBody);
+    }
+        else {
+            alert('Please enter username.');
         }
-        showStartPage();
-        currentQuestionIndex = 0;
-        nextQuestionBtn.innerText = 'Next question';
-        console.log('showStartPage function run inside saveToScoreBoard function');
-    }
-    else {
-        alert('Please enter username.');
-    }
 }
 
 //Function to reset number of points, empties the username field and start the quiz on the first question
