@@ -23,6 +23,9 @@ let scoreboard = [
 ];
 
 
+ //Empty the scoreboard so it does not dubble the output
+//let scoreboard = [];
+
 
 
 //Question and answers for the quiz
@@ -278,17 +281,31 @@ function saveToScoreBoard() {
         console.log('inputusernameValue');
         //Push the values inputUsernameValue and points to the scoreboard
         scoreboard.push({ username: inputUsernameValue, points: points });
-        //TODO: Not working to emptie older data, users are multiplied
-        /*function saveToScoreBoard() {
-            let inputUsernameValue = scoreboard.find((entry) => entry.name === inputUsernameValue);
-            if (inputUsernameValue) {
-                // If the player exists, update their score
-                inputUsernameValue.points = points;
-              } else {
-                // If the player doesn't exist, add a new entry
-                inputUsernameValue.push({ username: inputUsername, points: points });
-              }*/
         
+        
+        
+        //TODO: Not working why
+       /* function saveToScoreBoard() {
+            let inputUsernameValue = null;
+        
+            // Find if the username already exists in the scoreboard
+            for (let i = 0; i < scoreboard.length; i++) {
+                if (scoreboard[i].username === inputUsername) {
+                    inputUsernameValue = scoreboard[i];
+                    break; // Exit the loop if the username is found
+                }
+            }
+        
+            if (inputUsernameValue) {
+                // If the username exists, update their score
+                inputUsernameValue.points = points;
+            } else {
+                // If the username doesn't exist, add a new user
+                let newUser = { username: inputUsernameValue, points: points };
+                scoreboard.push(newUser);
+            }*/
+        
+             //TODO:vad gör nedan funktion????
         let body = document.querySelector('tbody');
         if (body) {
             while (body.firstChild) {
@@ -326,7 +343,7 @@ function saveToScoreBoard() {
             console.log('showStartPage function run inside saveToScoreBoard function');
         }
     }
-        else {
+       else {
             alert('Please enter username.');
         }
 }
