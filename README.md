@@ -1,5 +1,6 @@
 # Gender Inequality quiz
-[The Gender Inequality Quiz](https://aslinedvinsson.github.io/gender_inequality_quiz/)
+ <a href="https://aslinedvinsson.github.io/gender_inequality_quiz/" target="_blank">The Gender Inequality Quiz</a>
+
 ![alt-text](documentation/responsive.png)
 
 ## Introduction
@@ -120,11 +121,10 @@ Links, form, buttons and Javascript functions were tested manually.
 
 **Responsiveness**
 
-The website has been initially designed with a desktop-first approach, and throughout the development process, media queries and Flexbox have been employed to ensure responsiveness on a range of screen sizes. In the mobile design, the images are presented as backgrounds behind the text content.
+The website has been initially designed with a desktop-first approach, and throughout the development process, media queries and Flexbox have been employed to ensure responsiveness on a range of screen sizes. In the mobile design, the images are presented as backgrounds behind the text content.Chrome development tools was used throughout the design process to check responsiveness and breakpoints. Adjustments were made accordingly.
 
 **Browser testing**
-
-The website has undergone testing on popular web browsers such as Chrome, Mozilla Firefox, and Safari. In some cases, there are variations in the appearance in Mozilla Firefox and Safari. For additional information regarding this matter, please read 'Unfixed Bugs' section below.
+The website has undergone testing on popular web browsers such as Chrome, Mozilla Firefox, and Safari with no problems found. 
 
 ### Bugs
 xxxxx
