@@ -23,7 +23,7 @@ let scoreboard = [
 ];
 
 
- //Empty the scoreboard so it does not dubble the output
+//Empty the scoreboard so it does not dubble the output
 //let scoreboard = [];
 
 
@@ -112,10 +112,47 @@ function showStartPage() {
     firstPage.style.display = 'flex';
     secondPage.style.display = 'none'
     lastPage.style.display = 'none';
+    createScoreboard();
 }
 
 //Calling function to only show the first div (first page) with information about the quiz
 showStartPage();
+
+function createScoreboard() {
+    let tBody = document.querySelector('tbody');
+    if (tBody) {
+        while (tBody.firstChild) {
+            // This will remove all children within tbody 
+            tBody.removeChild(tBody.firstChild);
+            console.log('empties');
+        }
+
+        // Point are sorted so the username with highest amount of points is in the top of the scoreboard
+        scoreboard.sort(function (a, b) {
+            return b.points - a.points;
+        });
+
+        let table = document.getElementById('table')
+        //Create a tablebody element to hold the table rows
+        //let tBody = document.createElement('tbody');
+        //TODO:
+        //Loop though the scoreboard list
+        for (let i = 0; i < scoreboard.length; i++) {
+            //Create a tablerow element for each user
+            let tRow = document.createElement('tr');
+            // Create two tabledata to display the user's username and points
+            let userNameSpace = document.createElement('td');
+            let pointsSpace = document.createElement('td');
+            userNameSpace.innerHTML = scoreboard[i].username;
+            pointsSpace.innerHTML = scoreboard[i].points;
+            // Append the 'userNameSpace' and 'pointsSpace' to the 'tRow', the 'tRow' to the 'tBody' and the 'tBody' to the 'table'
+            tRow.appendChild(userNameSpace);
+            tRow.appendChild(pointsSpace);
+            tBody.appendChild(tRow);
+            table.appendChild(tBody);
+        }
+    }
+}
 
 //Function startQuizBtn on the first page hides the divs first_page and last_page and shows second_page
 function startQuizBtn() {
@@ -271,82 +308,52 @@ function displayResults() {
 let saveBtn = document.getElementById('save_btn');
 //Add click event on the save button
 saveBtn.addEventListener('click', saveToScoreBoard);
+let form = document.getElementById('form').addEventListener('submit', function(e) {
+     e.preventDefault();
+     saveToScoreBoard();
+}); 
 
 //function to save username and points to scoreboard    
-function saveToScoreBoard() {
+/*function saveToScoreBoard() {
     console.log('function saveToscoreboard is running');
     let inputUsernameValue = inputUsername.value;
     if (inputUsernameValue) {
         console.log('saveToScoreBoard function started');
         console.log('inputusernameValue');
         //Push the values inputUsernameValue and points to the scoreboard
-        scoreboard.push({ username: inputUsernameValue, points: points });
-        
-        
-        
-        //TODO: Not working why
-       /* function saveToScoreBoard() {
-            let inputUsernameValue = null;
-        
-            // Find if the username already exists in the scoreboard
-            for (let i = 0; i < scoreboard.length; i++) {
-                if (scoreboard[i].username === inputUsername) {
-                    inputUsernameValue = scoreboard[i];
-                    break; // Exit the loop if the username is found
-                }
-            }
-        
-            if (inputUsernameValue) {
-                // If the username exists, update their score
-                inputUsernameValue.points = points;
-            } else {
-                // If the username doesn't exist, add a new user
-                let newUser = { username: inputUsernameValue, points: points };
-                scoreboard.push(newUser);
-            }*/
-        
-             //TODO:vad gör nedan funktion????
-        let body = document.querySelector('tbody');
-        if (body) {
-            while (body.firstChild) {
-                // This will remove all children within tbody 
-                body.removeChild(body.firstChild);
-                console.log('empties');
-            }
+        scoreboard.push({ username: inputUsernameValue, points: points });*/
 
-            // Point are sorted so the username with highest amount of points is in the top of the scoreboard
-            scoreboard.sort(function (a, b) {
-                return b.points - a.points;
-            });
-            //TODO:
-            //Loop though the scoreboard list
-            for (let i = 0; i < scoreboard.length; i++) {
-                let table = document.getElementById('table')
-                //Create a tablebody element to hold the table rows
-                let tBody = document.createElement('tbody');
-                //Create a tablerow element for each user
-                let tRow = document.createElement('tr');
-                // Create two tabledata to display the user's username and points
-                let userNameSpace = document.createElement('td');
-                let pointsSpace = document.createElement('td');
-                userNameSpace.innerHTML = scoreboard[i].username;
-                pointsSpace.innerHTML = scoreboard[i].points;
-                // Append the 'userNameSpace' and 'pointsSpace' to the 'tRow', the 'tRow' to the 'tBody' and the 'tBody' to the 'table'
-                tRow.appendChild(userNameSpace);
-                tRow.appendChild(pointsSpace);
-                tBody.appendChild(tRow);
-                table.appendChild(tBody);
-            }
-            showStartPage();
-            currentQuestionIndex = 0;
-            nextQuestionBtn.innerText = 'Next question';
-            console.log('showStartPage function run inside saveToScoreBoard function');
+
+
+//TODO: Not working why
+function saveToScoreBoard() {
+    let existingUser;
+    // Find if the username already exists in the scoreboard
+    for (let i = 0; i < scoreboard.length; i++) {
+        if (scoreboard[i].username === inputUsername.value) {
+            existingUser = scoreboard[i];
+            break; // Exit the loop if the username is found
         }
     }
-       else {
-            alert('Please enter username.');
-        }
+
+    if (existingUser) {
+        // If the username exists, update their score
+        existingUser.points = points;
+    } else {
+        // If the username doesn't exist, add a new user
+        let newUser = { username: inputUsername.value, points: points };
+        scoreboard.push(newUser);
+    }
+
+    //TODO:vad gör nedan funktion????
+
+    showStartPage();
+    currentQuestionIndex = 0;
+    nextQuestionBtn.innerText = 'Next question';
+    console.log('showStartPage function run inside saveToScoreBoard function');
 }
+
+
 
 //Function to reset number of points, empties the username field and start the quiz on the first question
 function resetQuiz() {
