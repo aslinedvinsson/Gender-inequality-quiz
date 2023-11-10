@@ -147,6 +147,10 @@ tr {
   margin-left: auto;
 }
 
+#btn_check {
+  margin-bottom: 5%;
+}
+
 #save_btn {
   left: 35%;
 }
