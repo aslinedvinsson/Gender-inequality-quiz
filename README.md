@@ -107,9 +107,11 @@ The quiz is created with HTML(Hypertext Markup Language), CSS (Cascading Style S
 
 ## Testing
 **Validators**
+The following validators were used and detected errors were then fixed.
 - [HTML Validator](https://validator.w3.org/) 
 - [CSS Validator](https://jigsaw.w3.org/css-validator/) 
-- xxxxJS test was used to detect syntax errors, which were then fixed. 
+- [JSHint](https://jshint.com/) The result on validation
+![alt-text](documentation/result_jshint.png) 
 
 **Lighthouse results**
 ![alt-text](documentation/lighthouse_desktop.png)
