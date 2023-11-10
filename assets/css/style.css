@@ -135,16 +135,7 @@ tr {
 
 .btn:not(:disabled):active {
   transform: translateY(.125rem);
-}
-
-/*End of code from getcssscan.com*/
-
-/*Start button-div
-.start {
-  margin-left: 40%;
-  padding-bottom: 5%;
-  margin-top: 5%,
-}*/
+} /*End of code from getcssscan.com*/
 
 /*Continued button styling*/
 #start_quiz_btn,
