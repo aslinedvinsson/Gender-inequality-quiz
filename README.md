@@ -82,7 +82,7 @@ The sources for the factual information used to create the quiz questions and an
 
 - An alert message appears if the user presses the "Save" button before entering a username.
 
-- A scoreboard displays the usernames and points of users who have played at least once. When the page is reloaded, the scoreboard is reset.
+- A scoreboard is designed to showcase usernames and their corresponding points for users who have participated in the quiz at least once. In the event that a user opts to take the quiz a second time using the same username, the scoreboard will dynamically update the points while retaining the original username. However, it's important to note that when the page is reloaded, the scoreboard is reset. For illustration purposes, Nils and Anna are fictitious individuals who have previously taken the quiz, and their respective points are displayed on the scoreboard. This provides subsequent users with a reference point, allowing them to understand how points are presented and fostering a sense of competition as they strive to outperform these earlier participants.
 
 - A "Retake Quiz" button takes the user back to the first question of the quiz. The "Retake" button also resets the points from the previous attempt.
 
