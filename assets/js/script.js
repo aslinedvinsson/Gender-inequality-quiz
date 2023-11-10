@@ -22,12 +22,6 @@ let scoreboard = [
     },
 ];
 
-
-//Empty the scoreboard so it does not dubble the output
-//let scoreboard = [];
-
-
-
 //Question and answers for the quiz
 //Code from https://www.youtube.com/watch?v=BWR-MDQc65s 
 let questions = [
@@ -119,7 +113,9 @@ function showStartPage() {
 showStartPage();
 
 function createScoreboard() {
+     //Get the tablebody element to hold the table rows
     let tBody = document.querySelector('tbody');
+    //Check if the tBody contains any children elements from earlier
     if (tBody) {
         while (tBody.firstChild) {
             // This will remove all children within tbody 
@@ -132,10 +128,9 @@ function createScoreboard() {
             return b.points - a.points;
         });
 
+        //Get the table element
         let table = document.getElementById('table')
-        //Create a tablebody element to hold the table rows
-        //let tBody = document.createElement('tbody');
-        //TODO:
+       
         //Loop though the scoreboard list
         for (let i = 0; i < scoreboard.length; i++) {
             //Create a tablerow element for each user
@@ -281,10 +276,6 @@ function afterLastQuestionBtn() {
 // Function to show last page and hide the other two pages/divs
 function showLastPage() {
     //When 'View result' button on last question is clicked, the last page is shown
-    //let firstPage = document.querySelector('#first_page');
-    //let secondPage = document.querySelector('#second_page');
-    // let lastPage = document.querySelector('#last_page');
-    // firstPage.style.display = 'none';
     secondPage.style.display = 'none';
     lastPage.style.display = 'flex';
     console.log('show last page function run');
@@ -308,24 +299,14 @@ function displayResults() {
 let saveBtn = document.getElementById('save_btn');
 //Add click event on the save button
 saveBtn.addEventListener('click', saveToScoreBoard);
-let form = document.getElementById('form').addEventListener('submit', function(e) {
+//Get the form element
+let form = document.getElementById('form')
+//Add submit to form to enable Enter click as a submit
+form.addEventListener('submit', function(e) {
      e.preventDefault();
      saveToScoreBoard();
 }); 
 
-//function to save username and points to scoreboard    
-/*function saveToScoreBoard() {
-    console.log('function saveToscoreboard is running');
-    let inputUsernameValue = inputUsername.value;
-    if (inputUsernameValue) {
-        console.log('saveToScoreBoard function started');
-        console.log('inputusernameValue');
-        //Push the values inputUsernameValue and points to the scoreboard
-        scoreboard.push({ username: inputUsernameValue, points: points });*/
-
-
-
-//TODO: Not working why
 function saveToScoreBoard() {
     let existingUser;
     // Find if the username already exists in the scoreboard
@@ -335,7 +316,6 @@ function saveToScoreBoard() {
             break; // Exit the loop if the username is found
         }
     }
-
     if (existingUser) {
         // If the username exists, update their score
         existingUser.points = points;
@@ -344,16 +324,11 @@ function saveToScoreBoard() {
         let newUser = { username: inputUsername.value, points: points };
         scoreboard.push(newUser);
     }
-
-    //TODO:vad gör nedan funktion????
-
     showStartPage();
     currentQuestionIndex = 0;
     nextQuestionBtn.innerText = 'Next question';
     console.log('showStartPage function run inside saveToScoreBoard function');
 }
-
-
 
 //Function to reset number of points, empties the username field and start the quiz on the first question
 function resetQuiz() {
@@ -371,6 +346,7 @@ function retakeQuiz() {
     startQuizBtn();
     console.log('retakequiz function körs och reset och startquizbtn function');
 }
+
 //Call the function "retakeQuizBtn"
 retakeQuizBtn.addEventListener('click', retakeQuiz);
 
