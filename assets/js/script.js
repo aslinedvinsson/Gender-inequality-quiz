@@ -9,8 +9,6 @@ let selectedOptionIndex;
 let nextQuestionBtn = document.getElementById('btn_next');
 let inputUsername = document.getElementById('input_username');
 let points;
-//let username;
-
 
 let scoreboard = [
 
