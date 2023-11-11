@@ -109,7 +109,7 @@ The following validators were used and detected errors were then fixed.
 - [CSS Validator](https://jigsaw.w3.org/css-validator/) 
 - [JSHint](https://jshint.com/)
 
-**Lighthouse results**
+**Google Lighthouse results**
 ![alt-text](documentation/lighthouse_desktop.png)
 ![alt-text](documentation/lighthouse_mobile.png)
 
