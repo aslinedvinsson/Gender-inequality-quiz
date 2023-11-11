@@ -1,13 +1,13 @@
-let firstPage = document.querySelector('#first_page');
-let secondPage = document.querySelector('#second_page');
-let lastPage = document.querySelector('#last_page');
-let startBtn = document.getElementById('start_quiz_btn');
+const firstPage = document.querySelector('#first_page');
+const secondPage = document.querySelector('#second_page');
+const lastPage = document.querySelector('#last_page');
+const startBtn = document.getElementById('start_quiz_btn');
 let currentQuestionIndex = 0;
-let optionBtn = document.getElementById('options');
-let checkAnsBtn = document.getElementById('btn_check');
+const optionBtn = document.getElementById('options');
+const checkAnsBtn = document.getElementById('btn_check');
 let selectedOptionIndex;
-let nextQuestionBtn = document.getElementById('btn_next');
-let inputUsername = document.getElementById('input_username');
+const nextQuestionBtn = document.getElementById('btn_next');
+const inputUsername = document.getElementById('input_username');
 let points;
 
 //Fictitious quiz takers who have previously taken the quiz
