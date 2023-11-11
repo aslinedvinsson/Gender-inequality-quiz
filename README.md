@@ -4,9 +4,9 @@
 ![alt-text](documentation/responsive.png)
 
 ## Introduction
-The quiz is an interactive quiz about gender inequality, comprising ten questions, each with three answer options. Once a user selects an option, they will receive immediate feedback through color indicators on the options. If the chosen option is correct, it will turn green; if it is incorrect, it will turn red. In the case of an incorrect answer, not only will the chosen option turn red, but the other options will also turn red for wrong answers and green for the correct answer. This provides users with instant information about the correct answer, facilitating their learning.
+The quiz is an interactive quiz about gender inequality, comprising ten questions, each with three answer options. When a unser selects an option, they can change there mind until they press Check answer button. Once the user checked answer, they will receive immediate feedback through color indicators on the options. If the chosen option is correct, it will turn green; if it is incorrect, it will turn red. 
 
-At the end of the quiz, after the user has answered all the questions, the results, including the number of correct answers, will be displayed. Users have the option to create a username, which will be shown on the first page along with the quiz result. They can also choose to retake the quiz for a better result by clicking the "Retake Quiz" button, which will take them back to the first question, or they can exit the game by clicking the "Quit" button and return to the initial page.
+At the end of the quiz, after the user has answered all the questions, the results, including the number of correct answers, will be displayed. Users than have the option to create a username, which will be shown on the first page along with the quiz result. They can also choose to retake the quiz for a better result by clicking the "Retake Quiz" button, which will take them back to the first question, or they can exit the game by clicking the "Quit" button and return to the initial page.
 
 ## Target user
 The target audience for this quiz includes individuals who wish to evaluate their comprehension of gender inequality and, through participating in the quiz, expand their knowledge on the subject.
@@ -15,19 +15,18 @@ The target audience for this quiz includes individuals who wish to evaluate thei
 **Introduction page** Text about the quiz, instruction on how to take the quiz and scoreboard
 ![alt-text](documentation/first_page_desktop.png)
 
-**Questions** Displayed on at the time
+**Questions** Displayed one at the time
 ![alt-text](documentation/second_page_desktop.png)
 
 **Resultpage** On this page, you will find the outcome of the quiz you've just completed, along with instructions on how to save your result by creating a username. You can also choose to retake the quiz or exit the quiz.
 ![alt-text](documentation/last_page_desktop.png)
 
-**Scoreboard** Showing points afte three users taken the quiz
+**Scoreboard** Showing points afte three users taken the quiz, if they created a username.
 ![alt-text](documentation/scoreboard.png)
 
 **Mobile device** The images are displayed in the background of the text on mobile device
 
 <img src="documentation/first_page_mobile.png" alt="first page mobile device" width="300" height="auto">
-
 
 ### Wireframes
 ![alt-text](documentation/wireframe_first_page.png)
@@ -36,9 +35,7 @@ The target audience for this quiz includes individuals who wish to evaluate thei
 ![alt-text](documentation/wireframe_mobile.png)
 
 ### Fonts 
-Poppins is a sans-serif typeface with a geometric design. It's open-source and is characterized by the Indian Type Foundry as an "internationalist interpretation of the geometric sans-serif style." You can access Poppins for free on Google Fonts. Poppins conveys a sense of modernity and seriousness, aligning well with the theme of the quiz.
-
-The fallback font is san-serif xxxxx
+Poppins is a sans-serif typeface with a geometric design. It's open-source and is characterized by the Indian Type Foundry as an "internationalist interpretation of the geometric sans-serif style." You can access Poppins for free on Google Fonts. Poppins conveys a sense of modernity and seriousness, aligning well with the theme of the quiz. The fallback font is san-serif.
 
 ### Colors 
 The quiz, focusing on a serious theme of gender inequality, employs a subdued color palette of white and gray to convey neutrality. This approach avoids vibrant and colorful elements that might suggest happiness or joy.
@@ -68,7 +65,7 @@ The sources for the factual information used to create the quiz questions and an
 
 - Option buttons present three different answers for each quiz question. In JavaScript, the options have different indexes based on whether they are the right or wrong answer.
 
-- The option buttons change colors. When a user clicks on an option, it turns light blue to indicate their selection. Users can change their choice by clicking on another option, which will then turn blue. Once the user makes a final selection, they can press the "Check Answer" button. The selected answer will turn green if it is correct or red if it is wrong.
+- The option buttons change colors. When a user clicks on an option, it turns light blue to indicate their selection. Users can change their mind by clicking on another option, which will then turn blue. Once the user makes a final selection, they can press the "Check Answer" button. The selected answer will turn green if it is correct or red if it is wrong.
 
 - The "Check Answer" button is followed by a "Next Question" button. When the "Check Answer" button is clicked, it is hidden, and the "Next Question" button is displayed.
 
@@ -76,13 +73,13 @@ The sources for the factual information used to create the quiz questions and an
 
 - On the last question, instead of the "Next Question" button, a "Show Results" button is shown. Clicking this button appears to take the user to a new page, but it actually reveals a previously hidden div.
 
-- A points counter that tallies the number of correct answers. The total points are displayed along with a message based on how many correct answers the user has achieved.
+- A points counter that tallies the number of correct answers. On the last page, the total points are displayed along with a message based on how many correct answers the user has achieved.
 
-- A form that allows users to create a username. If the user wishes to save their results, they can optionally enter a username in the form and click the "Save" button. The first page will then display a scoreboard with the username and the number of points the user has earned.
+- A form that allows users to create a username. If the user wishes to save their results, they can optionally enter a username in the form and click the "Save" button or click Enter. The first page will then display a scoreboard with the username and the number of points the user has earned.
 
 - An alert message appears if the user presses the "Save" button before entering a username.
 
-- A scoreboard is designed to showcase usernames and their corresponding points for users who have participated in the quiz at least once. In the event that a user opts to take the quiz a second time using the same username, the scoreboard will dynamically update the points while retaining the original username. However, it's important to note that when the page is reloaded, the scoreboard is reset. For illustration purposes, Nils and Anna are fictitious individuals who have previously taken the quiz, and their respective points are displayed on the scoreboard. This provides subsequent users with a reference point, allowing them to understand how points are presented and fostering a sense of competition as they strive to outperform these earlier participants.
+- A scoreboard is designed to showcase usernames and their corresponding points for users who have participated in the quiz at least once. In the event that a user opts to take the quiz a second time using the same username, the scoreboard will dynamically update the points while retaining the original username. However, when the page is reloaded, the scoreboard is reset. For illustration purposes, Nils and Anna are fictitious individuals who have previously taken the quiz, and their respective points are displayed on the scoreboard. This provides subsequent users with a reference point, allowing them to understand how points are presented and fostering a sense of competition as they strive to outperform these earlier participants.
 
 - A "Retake Quiz" button takes the user back to the first question of the quiz. The "Retake" button also resets the points from the previous attempt.
 
@@ -128,16 +125,13 @@ The website has been initially designed with a desktop-first approach, and throu
 **Browser testing**
 The website has undergone testing on popular web browsers such as Chrome, Mozilla Firefox, and Safari with no problems found. 
 
-### Bugs
-xxxxx
-
 ### Unfixed bugs
-xxxxx
+When testing the website on an actual iPhone, it is observed that the position of the "Next Question" button on the first question is lower than intended. However, on the other questions, the "Next Question" button appears as expected. This bug does not appear when using the mobile-sized screen in Google Developer Tools.
 
 ## Deployment
 The site is deployed at GitHub as follows: On the GitHub repository, go to Settings/Pages and set the default branch to Main. When the branch is selected the page will display a deployment and the link address.
 
-The live site is found here [The Gender Inequality Quiz](https://aslinedvinsson.github.io/gender_inequality_quiz/)
+The live site is found here [The Gender Inequality Quiz](https://aslinedvinsson.github.io/gender_inequality_quiz/) and at the top of the ReadMe.
 
 # Credits
 **Mentor**
@@ -175,11 +169,11 @@ Favicon designed by corpus delicti from [The Noun project](https://thenounprojec
 ## Code from somewhere else
 
 **Template**
-Template was generated from Code-Institute-Org/ci-full-template.
+Template was generated from [CodeInstitute Github account](https://github.com/Code-Institute-Org).
 
 **Style buttons**
 
-Code for generell styling of buttons are taken from [GetScan](https://getcssscan.com/css-buttons-examples).
+Code for generell styling of buttons are taken from [GetScan](https://getcssscan.com/css-buttons-examples) nr 80.
 
 **Tutorials on how to make a quiz**
 
