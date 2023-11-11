@@ -243,6 +243,7 @@ tr {
 
   .text_square {
     opacity: 90%;
+    height: max-content;
   }
 
   /*Hide the longer text on small devices and show the shorter text for instructions instead*/
