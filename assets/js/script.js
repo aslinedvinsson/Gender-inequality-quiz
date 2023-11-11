@@ -10,8 +10,9 @@ let nextQuestionBtn = document.getElementById('btn_next');
 let inputUsername = document.getElementById('input_username');
 let points;
 
-let scoreboard = [
-
+//Fictitious quiz takers who have previously taken the quiz
+let scoreboard =
+[
     {
         username: 'Nils',
         points: 2
@@ -22,7 +23,7 @@ let scoreboard = [
     }
 ];
 
-//Question and answers for the quiz
+//Questions, options and correct answers for the quiz
 //Code from https://www.youtube.com/watch?v=BWR-MDQc65s 
 let questions = [
     //Question 1
@@ -43,60 +44,48 @@ let questions = [
         options: ['440', '650', '820'],
         correctAns: '1'
     },
-    /*
     //Question 4
     {
         question: 'Question 4: How many woman and men reported experiencing some form of sexual harassment and/or assault in their lifetime.',
         options: ['81% of women and 43% of men', '75% of women and 53% of men', '63% of women and 58% of men'],
         correctAns: '0'
     },
-
     //Question 5
     {
         question: 'Question 5: How many millions of girls and women have suffered female genital mutilation (in 31 countries for which representative data is available.',
         options: ['200 million', '250 million', '150 million'],
         correctAns: '1'
     },
-
     //Question 6
     {
         question:'In the past five years, how many percent of the peace mediators were woman?',
         options: ['6%', '11%', '15%'],
         correctAns: '1'
     },
-
     //Question 7
-
     {
         question: 'Which is the top and bottom country in the Global gender gap index ranking 2023?',
         options: ['Top: Norweig Bottom: Ethiopa', 'Top: Sweden Bottom: Angola', 'Top: Island Bottom: Afganisthan'],
         correctAns: '2' 
     },
-
     //Question 8
-
     {
         question: 'At the current pace, in how many years is the global gender gap closed?',
         options: ['108 years', '123 years', '131 years'],
         correctAns: '2'
     },
-
     //Question 9
-
     {
         question: 'At the current rates of progress in gender inequality. How many million girls and young women will be out of school in 2030?',
         options: ['70 millions', '90 millions', '110 millions'],
         correctAns: '2'
     },
-
     //Question 10
-
     {
         question: 'How many percent of prime working age women and men are in the labour force?',
         options: ['Woman: 45% Men: 80%', 'Woman: 61% Men: 90%', 'Woman:70% Men: 85%'],
         correctAns: '1'
     }
-    */
 ];
 
 /*Using a function showStartPage instead of making three pages in html, the two divs (instead of two other pages) for 
@@ -112,6 +101,7 @@ function showStartPage() {
 //Calling function to only show the first div (first page) with information about the quiz
 showStartPage();
 
+//Function to create a scoreboard
 function createScoreboard() {
      //Get the tablebody element to hold the table rows
     let tBody = document.querySelector('tbody');
@@ -122,8 +112,7 @@ function createScoreboard() {
             tBody.removeChild(tBody.firstChild);
             console.log('empties');
         }
-
-        // Point are sorted so the username with highest amount of points is in the top of the scoreboard
+        // Points are sorted, placing the username with the highest amount at the top of the scoreboard.
         scoreboard.sort(function (a, b) {
             return b.points - a.points;
         });
@@ -131,13 +120,14 @@ function createScoreboard() {
         //Get the table element
         let table = document.getElementById('table');
        
-        //Loop though the scoreboard list
+        //Loop through the scoreboard list
         for (let i = 0; i < scoreboard.length; i++) {
             //Create a tablerow element for each user
             let tRow = document.createElement('tr');
             // Create two tabledata to display the user's username and points
             let userNameSpace = document.createElement('td');
             let pointsSpace = document.createElement('td');
+            //Writing out the username and points on the scoreboard
             userNameSpace.innerHTML = scoreboard[i].username;
             pointsSpace.innerHTML = scoreboard[i].points;
             // Append the 'userNameSpace' and 'pointsSpace' to the 'tRow', the 'tRow' to the 'tBody' and the 'tBody' to the 'table'
@@ -162,8 +152,8 @@ function startQuizBtn() {
 //Call function startQuizBtn when onlick on'tart quiz' button
 startBtn.onclick = startQuizBtn;
 
-/*Function displayQuestion displays one question at the time including three option where one is the correct answer. 
-When user chose the correct answer the points variable add by 1.*/
+/*Function displayQuestion displays one question at the time including three option where one 
+is the correct answer. When user chose the correct answer the points variable add by 1.*/
 function displayQuestion() {
     console.log('display question function');
     let questionText = document.getElementById('question_text');
@@ -171,6 +161,7 @@ function displayQuestion() {
     //Check if the current question index is lower than the lenght of the list of questions.
     if (currentQuestionIndex < questions.length) {
         questionText.textContent = questions[currentQuestionIndex].question;
+        //Display options for the question
         for (let i = 0; i < optionBtns.length; i++) {
             optionBtns[i].textContent = questions[currentQuestionIndex].options[i];
             console.log('display options');
@@ -186,7 +177,8 @@ function displayQuestion() {
     }
 }
 
-//Function to make option blue when user click on it, to show the user what they have selected.
+/*Function to make an option blue when user click on it, to show the user what they have clicked on. 
+If they click on another option, maybe change their mind, that option will turn blue*/
 function addAnswer(event) {
     if (event.target.classList.contains('btn_opt')) {
         // Get the selected option index
@@ -212,17 +204,20 @@ function checkAns() {
     if (selectedOption) {
         // Remove the 'selected_blue' class from the selected option
         selectedOption.classList.remove('selected_blue');
+        //Check if the users selected option is the correct answer
         if (selectedOptionIndex === correctAns) {
             // User selected the correct answer and option turns green
             selectedOption.classList.add('right_green');
+            //One point is added to points
             points++;
-            console.log(`Correct, total points: ${points}`);
+            console.log(`Total points: ${points}`);
         } else {
             // User selected the wrong answer and option turns red
             selectedOption.classList.add('wrong_red');
-            console.log(`Wrong, total points: ${points}`);
+            console.log(`Total points: ${points}`);
         }
-        // After the user clicked on the 'Check Answer' button, the button is hidden and the 'Next Question' button is shown.
+        /*After the user clicked on the 'Check Answer' button, the button is hidden and the 'Next Question' 
+        button is shown.*/
         checkAnsBtn.style.display = 'none';
         nextQuestionBtn.style.display = 'block';
         // After the user checks if they answered correctly, the optionBtns are disabled
@@ -255,18 +250,19 @@ function nextQuestion() {
             afterLastQuestionBtn();
         } else {
             showLastPage();
-            console.log('show last page function called');
+            console.log('showlastpage function called');
         }
     }
 }
 
 //Add click on the nextQuestionBtn and call the nextQuestion function
 nextQuestionBtn.addEventListener('click', nextQuestion);
-console.log('nextquestion function');
+console.log('nextquestion function called');
 
 //Variable for the last question in the quiz
 let lastQuestionIndex = questions.length - 1;
-//Function to check if the current question is the last question, and if it is, change the text on the nextQuestionBtn to 'View result'
+/*Function to check if the current question is the last question, and if it is, change the text on the 
+nextQuestionBtn to 'View result'*/
 function afterLastQuestionBtn() {
     if (currentQuestionIndex === lastQuestionIndex) {
         nextQuestionBtn.innerText = 'View results';
@@ -278,7 +274,6 @@ function showLastPage() {
     //When 'View result' button on last question is clicked, the last page is shown
     secondPage.style.display = 'none';
     lastPage.style.display = 'flex';
-    console.log('show last page function run');
     displayResults();
     console.log('displayResults function called');
 }
@@ -287,11 +282,11 @@ function showLastPage() {
 function displayResults() {
     let results = document.getElementById('results');
     if (points <= 3) {
-        results.innerHTML = `You got ${points} points out of ${questions.length}. You need to study more.`;
+        results.innerHTML = `You got ${points} points out of ${questions.length}. Good effort! More studying will lead to even greater knowledge and awareness!`;
     } else if (points >= 4 && points <= 7) {
-        results.innerHTML = `You got ${points} points out of ${questions.length}. There is room for improvement`;
+        results.innerHTML = `You got ${points} points out of ${questions.length}. You're on the right track! Embrace the journey of knowledge – every step you take brings you closer to taking action for equality!`;
     } else {
-        results.innerHTML = `You got ${points} points out of ${questions.length}. Great job! The feminsit movement can count on you!`;
+        results.innerHTML = `You got ${points} points out of ${questions.length}. Great job! Your support adds strength to the feminist movement. Keep standing up for equality!`;
     }
 }
 
@@ -301,7 +296,9 @@ let saveBtn = document.getElementById('save_btn');
 saveBtn.addEventListener('click', saveToScoreBoard);
 //Get the form element
 let form = document.getElementById('form');
-//Add submit to form to enable Enter click as a submit
+//Add submit to form to enable Enter click as a submit, it the user press Enter instead of Svae button
+/*This stackoverflow helped me to write the code to prevent Enter click to reload page
+https://stackoverflow.com/questions/71189314/my-preventdefault-is-not-working-when-submit-is-pressed*/
 form.addEventListener('submit', function(e) {
      e.preventDefault();
      saveToScoreBoard();
@@ -309,7 +306,7 @@ form.addEventListener('submit', function(e) {
 
 function saveToScoreBoard() {
     let existingUser;
-    // Find if the username already exists in the scoreboard
+    // Find out if the username already exists in the scoreboard
     for (let i = 0; i < scoreboard.length; i++) {
         if (scoreboard[i].username === inputUsername.value) {
             existingUser = scoreboard[i];
@@ -330,21 +327,22 @@ function saveToScoreBoard() {
     console.log('showStartPage function run inside saveToScoreBoard function');
 }
 
-//Function to reset number of points, empties the username field and start the quiz on the first question
+/*Function to reset number of points, empties the username field, start the quiz on the first question and change 
+text on the button from Show result to Next question*/
 function resetQuiz() {
     points = 0;
     currentQuestionIndex = 0;
     document.getElementById('input_username').value = '';
     nextQuestionBtn.innerText = 'Next question';
-    console.log('resetQuiz function run');
-}
+    }
 
-//Function to retake quiz which returns to the first question
+//Function to retake quiz which takes the user directly to the first question instead of firstPage
 let retakeQuizBtn = document.getElementById('retake');
 function retakeQuiz() {
     resetQuiz();
+    console.log('resetQuiz function called inside retakeQuiz function')
     startQuizBtn();
-    console.log('retakequiz function körs och reset och startquizbtn function');
+    console.log('startquizbtn function called inside retakeQuiz function');
 }
 
 //Call the function 'retakeQuizBtn'
