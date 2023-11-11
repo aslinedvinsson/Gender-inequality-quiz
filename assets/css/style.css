@@ -223,6 +223,12 @@ tr {
   margin-bottom: 2%;
 }
 
+@media screen and (max-width: 768px) {
+  caption h2 {
+    font-size: 120%;
+  }
+}
+
 @media screen and (max-width: 600px) {
 
   .content {
@@ -261,10 +267,6 @@ tr {
 
   h1 {
     font-size: 270%;
-  }
-
-  caption {
-    font-size: 115%;
   }
 
   thead {
