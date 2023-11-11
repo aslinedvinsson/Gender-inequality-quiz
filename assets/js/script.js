@@ -29,19 +29,19 @@ let questions = [
     //Question 1
     {
         question: 'Question 1: How many countries have not laws specifically protecting women from domestic violence?',
-        options: ['20', '45', '60'],
+        options: ['20 countries', '45 countries', '60 countries'],
         correctAns: '1'
     },
     //Question 2
     {
         question: 'Question 2: How many women across the world are killed by a member of their own family every day?',
-        options: ['68', '93', '137'],
+        options: ['68 women', '93 women', '137 women'],
         correctAns: '2'
     },
     //Question 3
     {
         question: 'Question 3: How many million women and girls in the world today were married before age 18?',
-        options: ['440', '650', '820'],
+        options: ['440 million', '650 million', '820 million'],
         correctAns: '1'
     },
     //Question 4
@@ -59,7 +59,7 @@ let questions = [
     //Question 6
     {
         question: 'In the past five years, how many percent of the peace mediators were woman?',
-        options: ['6%', '11%', '15%'],
+        options: ['6 % of the peace mediators', '11 % of the peace mediators', '15 % of the peace mediators'],
         correctAns: '1'
     },
     //Question 7
@@ -77,13 +77,13 @@ let questions = [
     //Question 9
     {
         question: 'At the current rates of progress in gender inequality. How many million girls and young women will be out of school in 2030?',
-        options: ['70 millions', '90 millions', '110 millions'],
+        options: ['70 million', '90 million', '110 million'],
         correctAns: '2'
     },
     //Question 10
     {
         question: 'How many percent of prime working age women and men are in the labour force?',
-        options: ['Woman: 45% Men: 80%', 'Woman: 61% Men: 90%', 'Woman:70% Men: 85%'],
+        options: ['Woman: 45% Men: 80%', 'Woman: 61% Men: 90%', 'Woman: 70% Men: 85%'],
         correctAns: '1'
     }
 ];
