@@ -107,8 +107,7 @@ The quiz is created with HTML(Hypertext Markup Language), CSS (Cascading Style S
 The following validators were used and detected errors were then fixed.
 - [HTML Validator](https://validator.w3.org/) 
 - [CSS Validator](https://jigsaw.w3.org/css-validator/) 
-- [JSHint](https://jshint.com/) The result on validation
-![alt-text](documentation/result_jshint.png) 
+- [JSHint](https://jshint.com/)
 
 **Lighthouse results**
 ![alt-text](documentation/lighthouse_desktop.png)
@@ -139,9 +138,9 @@ The live site is found here [The Gender Inequality Quiz](https://aslinedvinsson.
 I owe a great deal of credit to my highly respected mentor, Jad Mokdad, whose support and wise guidance played a pivotal role in shaping the trajectory of this project. His recommendations not only offered valuable guidance but also illuminated the path for me to focus my endeavors most effectively. 
 
 **Photos**
-- protest.webp by <a href="https://unsplash.com/@mettyunuabona?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ehimetalor Akhere Unuabona</a> on <a href="https://unsplash.com/photos/a-crowd-of-people-holding-signs-and-flags-UIat6pw8S7A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-- talk_about_it.webp by <a href="https://unsplash.com/@mbaumi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mika Baumeister</a> on <a href="https://unsplash.com/photos/woman-in-yellow-and-red-crew-neck-t-shirt-kyPfAreO7lI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-- times_up.webp by <a href="https://unsplash.com/@elyssarenae?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Elyssa Fahndrich</a> on <a href="https://unsplash.com/photos/person-carrying-rally-poster-gizHA4cM3Zs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+- protest.webp by <a href="https://unsplash.com/@mettyunuabona?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target=”_blank”>Ehimetalor Akhere Unuabona</a> on <a href="https://unsplash.com/photos/a-crowd-of-people-holding-signs-and-flags-UIat6pw8S7A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target=”_blank” >Unsplash</a>
+- talk_about_it.webp by <a href="https://unsplash.com/@mbaumi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target=”_blank”>Mika Baumeister</a> on <a href="https://unsplash.com/photos/woman-in-yellow-and-red-crew-neck-t-shirt-kyPfAreO7lI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target=”_blank”>Unsplash</a>
+- times_up.webp by <a href="https://unsplash.com/@elyssarenae?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target=”_blank”>Elyssa Fahndrich</a> on <a href="https://unsplash.com/photos/person-carrying-rally-poster-gizHA4cM3Zs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target=”_blank”>Unsplash</a>
   
 
 **Facts references:**

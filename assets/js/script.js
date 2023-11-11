@@ -12,16 +12,16 @@ let points;
 
 //Fictitious quiz takers who have previously taken the quiz
 let scoreboard =
-[
-    {
-        username: 'Nils',
-        points: 2
-    },
-    {
-        username: 'Anna',
-        points: 5
-    }
-];
+    [
+        {
+            username: 'Nils',
+            points: 2
+        },
+        {
+            username: 'Anna',
+            points: 5
+        }
+    ];
 
 //Questions, options and correct answers for the quiz
 //Code from https://www.youtube.com/watch?v=BWR-MDQc65s 
@@ -58,7 +58,7 @@ let questions = [
     },
     //Question 6
     {
-        question:'In the past five years, how many percent of the peace mediators were woman?',
+        question: 'In the past five years, how many percent of the peace mediators were woman?',
         options: ['6%', '11%', '15%'],
         correctAns: '1'
     },
@@ -66,7 +66,7 @@ let questions = [
     {
         question: 'Which is the top and bottom country in the Global gender gap index ranking 2023?',
         options: ['Top: Norweig Bottom: Ethiopa', 'Top: Sweden Bottom: Angola', 'Top: Island Bottom: Afganisthan'],
-        correctAns: '2' 
+        correctAns: '2'
     },
     //Question 8
     {
@@ -103,7 +103,7 @@ showStartPage();
 
 //Function to create a scoreboard
 function createScoreboard() {
-     //Get the tablebody element to hold the table rows
+    //Get the tablebody element to hold the table rows
     let tBody = document.querySelector('tbody');
     //Check if the tBody contains any children elements from earlier
     if (tBody) {
@@ -119,7 +119,7 @@ function createScoreboard() {
 
         //Get the table element
         let table = document.getElementById('table');
-       
+
         //Loop through the scoreboard list
         for (let i = 0; i < scoreboard.length; i++) {
             //Create a tablerow element for each user
@@ -299,10 +299,10 @@ let form = document.getElementById('form');
 //Add submit to form to enable Enter click as a submit, it the user press Enter instead of Svae button
 /*This stackoverflow helped me to write the code to prevent Enter click to reload page
 https://stackoverflow.com/questions/71189314/my-preventdefault-is-not-working-when-submit-is-pressed*/
-form.addEventListener('submit', function(e) {
-     e.preventDefault();
-     saveToScoreBoard();
-}); 
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    saveToScoreBoard();
+});
 
 function saveToScoreBoard() {
     let existingUser;
@@ -334,7 +334,7 @@ function resetQuiz() {
     currentQuestionIndex = 0;
     document.getElementById('input_username').value = '';
     nextQuestionBtn.innerText = 'Next question';
-    }
+}
 
 //Function to retake quiz which takes the user directly to the first question instead of firstPage
 let retakeQuizBtn = document.getElementById('retake');

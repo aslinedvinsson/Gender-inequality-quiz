@@ -134,7 +134,9 @@ tr {
 
 .btn:not(:disabled):active {
   transform: translateY(.125rem);
-} /*End of code from getcssscan.com*/
+}
+
+/*End of code from getcssscan.com*/
 
 /*Continued button styling*/
 #start_quiz_btn,
@@ -176,6 +178,7 @@ tr {
 .wrong_red {
   background-color: #E48F92;
 }
+
 /*End of button styling*/
 
 /*First page*/
@@ -268,7 +271,8 @@ tr {
   }
 
   .btn {
-    font-size: 1rem;;
+    font-size: 1rem;
+    ;
   }
 
   .start {
