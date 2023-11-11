@@ -1,6 +1,6 @@
-const firstPage = document.querySelector('#first_page');
-const secondPage = document.querySelector('#second_page');
-const lastPage = document.querySelector('#last_page');
+let firstPage = document.querySelector('#first_page');
+let secondPage = document.querySelector('#second_page');
+let lastPage = document.querySelector('#last_page');
 const startBtn = document.getElementById('start_quiz_btn');
 let currentQuestionIndex = 0;
 const optionBtn = document.getElementById('options');
@@ -307,52 +307,57 @@ form.addEventListener('submit', function (e) {
 function saveToScoreBoard() {
     let existingUser;
     // Find out if the username already exists in the scoreboard
-    for (let i = 0; i < scoreboard.length; i++) {
-        if (scoreboard[i].username === inputUsername.value) {
-            existingUser = scoreboard[i];
-            break; // Exit the loop if the username is found
+    if (inputUsername.value) {
+        for (let i = 0; i < scoreboard.length; i++) {
+            if (scoreboard[i].username === inputUsername.value) {
+                existingUser = scoreboard[i];
+                break; // Exit the loop if the username is found
+            }
         }
+        if (existingUser) {
+            // If the username exists, update their score
+            existingUser.points = points;
+        } else {
+            // If the username doesn't exist, add a new user
+            let newUser = { username: inputUsername.value, points: points };
+            scoreboard.push(newUser);
+        }
+        showStartPage();
+        currentQuestionIndex = 0;
+        nextQuestionBtn.innerText = 'Next question';
+        console.log('showStartPage function run inside saveToScoreBoard function');
     }
-    if (existingUser) {
-        // If the username exists, update their score
-        existingUser.points = points;
-    } else {
-        // If the username doesn't exist, add a new user
-        let newUser = { username: inputUsername.value, points: points };
-        scoreboard.push(newUser);
+    else {
+        alert('Please enter username.');
     }
-    showStartPage();
-    currentQuestionIndex = 0;
-    nextQuestionBtn.innerText = 'Next question';
-    console.log('showStartPage function run inside saveToScoreBoard function');
 }
 
-/*Function to reset number of points, empties the username field, start the quiz on the first question and change 
-text on the button from Show result to Next question*/
-function resetQuiz() {
-    points = 0;
-    currentQuestionIndex = 0;
-    document.getElementById('input_username').value = '';
-    nextQuestionBtn.innerText = 'Next question';
-}
+    /*Function to reset number of points, empties the username field, start the quiz on the first question and change 
+    text on the button from Show result to Next question*/
+    function resetQuiz() {
+        points = 0;
+        currentQuestionIndex = 0;
+        document.getElementById('input_username').value = '';
+        nextQuestionBtn.innerText = 'Next question';
+    }
 
-//Function to retake quiz which takes the user directly to the first question instead of firstPage
-let retakeQuizBtn = document.getElementById('retake');
-function retakeQuiz() {
-    resetQuiz();
-    console.log('resetQuiz function called inside retakeQuiz function')
-    startQuizBtn();
-    console.log('startquizbtn function called inside retakeQuiz function');
-}
+    //Function to retake quiz which takes the user directly to the first question instead of firstPage
+    let retakeQuizBtn = document.getElementById('retake');
+    function retakeQuiz() {
+        resetQuiz();
+        console.log('resetQuiz function called inside retakeQuiz function')
+        startQuizBtn();
+        console.log('startquizbtn function called inside retakeQuiz function');
+    }
 
-//Call the function 'retakeQuizBtn'
-retakeQuizBtn.addEventListener('click', retakeQuiz);
+    //Call the function 'retakeQuizBtn'
+    retakeQuizBtn.addEventListener('click', retakeQuiz);
 
-// Funtion 'quit' resets the data and return the user to the first page 
-let quitBtn = document.getElementById('quit_btn');
-function quit() {
-    resetQuiz();
-    showStartPage();
-}
-//Add click event on quitbutton and call the function 'quit'
-quitBtn.addEventListener('click', quit);
+    // Funtion 'quit' resets the data and return the user to the first page 
+    let quitBtn = document.getElementById('quit_btn');
+    function quit() {
+        resetQuiz();
+        showStartPage();
+    }
+    //Add click event on quitbutton and call the function 'quit'
+    quitBtn.addEventListener('click', quit);
