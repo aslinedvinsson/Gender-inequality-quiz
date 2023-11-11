@@ -32,7 +32,7 @@
                     <p>Ready to test your knowledge about gender inequality and its impact on society? Stay informed
                         and work towards a more equitable future</p>
                     <div class="start">
-                        <button class='btn' id='start_quiz_btn' type="button">Start quiz</button>
+                        <button class='btn' id='start_quiz_btn' aria-label="Start quiz" type="button">Start quiz</button>
                     </div>
                 </div>
                 <!--Instructions to take the quiz. On smaller devices the text is truncated-->
@@ -80,17 +80,17 @@
             <div class="half half_p2 text_square">
                 <h2 id="question_text">Question nr n</h2>
                 <div id="options" class="options">
-                    <button class='btn btn_opt' type="button" data-index="0"></button>
+                    <button class='btn btn_opt' aria-label="option" type="button" data-index="0"></button>
                     <br>
-                    <button class='btn btn_opt' type="button" data-index="1"></button>
+                    <button class='btn btn_opt' aria-label="option" type="button" data-index="1"></button>
                     <br>
-                    <button class='btn btn_opt' type="button" data-index="2"></button>
+                    <button class='btn btn_opt' aria-label="option" type="button" data-index="2"></button>
                     <br>
                 </div>
                 <!--Button for checking if correct answer and button for next question-->
                 <div>
-                    <button id='btn_check' class='btn' type="button">Check answer</button>
-                    <button id='btn_next' class='btn' type="button">Next question</button>
+                    <button id='btn_check' class='btn' aria-label="Check answer" type="button">Check answer</button>
+                    <button id='btn_next' class='btn' aria-label="Next question" type="button">Next question</button>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
                     <!--When user press save button, it controls that the user created a username and 
                     the result is showed on the first page on the score board-->
                     <div>
-                        <button class='btn' id="save_btn" type="button">Save</button>
+                        <button class='btn' id="save_btn" aria-label="Save" type="button">Save</button>
                     </div>
                 </div>
                 <div class="text_square">
@@ -134,11 +134,11 @@
                     <div class="retake_quit_div">
                         <!--Button to retake the quiz. The button is a reset button (resets the form-data to its initial values)-->
                         <div>
-                            <button class='btn' id="retake" type="button">Retake quiz</button>
+                            <button class='btn' id="retake" aria-label="Retake quiz" type="button">Retake quiz</button>
                         </div>
                         <!--Button to quit the quiz. The button is a reset button (resets the form-data to its initial values)-->
                         <div>
-                            <button class='btn' id="quit_btn" type="button">Quit</button>
+                            <button class='btn' id="quit_btn" aria-label="Quit" type="button">Quit</button>
                         </div>
                     </div>
                 </div>
