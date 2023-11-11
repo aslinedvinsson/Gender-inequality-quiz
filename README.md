@@ -124,8 +124,8 @@ The website has been initially designed with a desktop-first approach, and throu
 **Browser testing**
 The website has undergone testing on popular web browsers such as Chrome, Mozilla Firefox, and Safari with no problems found. 
 
-### Unfixed bugs
-When testing the website on an actual iPhone, it is observed that the position of the "Next Question" button on the first question is lower than intended and the options and "Next Question" button pushes outsida of the gray text area. This bug does not appear on deployed site when using the mobile-sized screen in Google Developer Tools. 
+### Bugs
+No bugs were detected.
 
 ## Deployment
 The site is deployed at GitHub as follows: On the GitHub repository, go to Settings/Pages and set the default branch to Main. When the branch is selected the page will display a deployment and the link address.
