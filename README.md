@@ -1,5 +1,5 @@
 # Gender Inequality quiz
- <a href="https://aslinedvinsson.github.io/gender_inequality_quiz/" target="_blank">The Gender Inequality Quiz</a>
+ <a href=" https://aslinedvinsson.github.io/Gender-inequality-quiz/" target="_blank">The Gender Inequality Quiz</a>
 
 ![alt-text](documentation/responsive.png)
 
@@ -130,7 +130,7 @@ No bugs were detected.
 ## Deployment
 The site is deployed at GitHub as follows: On the GitHub repository, go to Settings/Pages and set the default branch to Main. When the branch is selected the page will display a deployment and the link address.
 
-The live site is found here [The Gender Inequality Quiz](https://aslinedvinsson.github.io/gender_inequality_quiz/) and at the top of the ReadMe.
+The live site is found here [The Gender Inequality Quiz](https://aslinedvinsson.github.io/Gender-inequality-quiz/) and at the top of the ReadMe.
 
 # Credits
 **Mentor**
