@@ -1,5 +1,5 @@
 # Gender Inequality quiz
- <a href=" https://aslinedvinsson.github.io/Gender-inequality-quiz/" target="_blank">The Gender Inequality Quiz</a>
+ <a href="https://aslinedvinsson.github.io/Gender-inequality-quiz/" target="_blank">The Gender Inequality Quiz</a>
 
 ![alt-text](documentation/responsive.png)
 
